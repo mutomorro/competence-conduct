@@ -403,11 +403,10 @@ export default function ChallengesPage() {
             {challenges.map((c, i) => (
               <li
                 key={c.title}
-                className={
-                  i === 0
-                    ? ''
-                    : 'mt-12 pt-12 border-t border-warm-mid'
-                }
+                id={`challenge-${i + 1}`}
+                className={`scroll-mt-24 ${
+                  i === 0 ? '' : 'mt-12 pt-12 border-t border-warm-mid'
+                }`}
               >
                 <div className="flex items-baseline gap-4">
                   <span className="font-display font-normal text-2xl text-purple-accent shrink-0">
