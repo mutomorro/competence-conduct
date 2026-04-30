@@ -41,7 +41,7 @@ function Kicker({ children }) {
 
 function SectionHeading({ children }) {
   return (
-    <h2 className="font-display text-[1.75rem] leading-[1.3] text-ink">
+    <h2 className="font-display text-[1.75rem] md:text-[2.25rem] leading-[1.2] text-ink">
       {children}
     </h2>
   )
@@ -231,7 +231,7 @@ export default function StandardPage() {
       <SectionWrapper id="top">
         <div className="max-w-[56rem]">
           <Kicker>The Standard</Kicker>
-          <h1 className="font-display text-[2.5rem] leading-[1.2] text-ink tracking-tight">
+          <h1 className="font-display text-[2.5rem] md:text-[3.5rem] leading-[1.05] tracking-tight text-ink">
             The Competence and Conduct Standard: culture and behaviour
             requirements
           </h1>

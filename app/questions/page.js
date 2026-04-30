@@ -208,7 +208,7 @@ export default function QuestionsPage() {
           <p className="text-xs uppercase tracking-[0.05em] font-medium text-purple-accent mb-2">
             Five Questions
           </p>
-          <h1 className="font-display text-[2.5rem] leading-[1.2] text-ink tracking-tight">
+          <h1 className="font-display text-[2.5rem] md:text-[3.5rem] leading-[1.05] tracking-tight text-ink">
             Five culture questions for housing leadership teams
           </h1>
 
