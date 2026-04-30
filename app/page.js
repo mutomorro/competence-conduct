@@ -7,7 +7,7 @@ export const metadata = {
   title:
     'Beyond Qualifications | Culture change and the Competence and Conduct Standard',
   description:
-    'The Competence and Conduct Standard requires more than qualifications. A guide and diagnostic tool for housing leaders navigating the culture and behaviour requirements.',
+    'The Competence and Conduct Standard requires more than qualifications. A practical guide and diagnostic tool for housing leaders navigating the culture and behaviour requirements before October 2026.',
   openGraph: {
     title: 'Beyond Qualifications | Competence and Conduct Standard',
     description:

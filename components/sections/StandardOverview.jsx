@@ -12,7 +12,7 @@ export default function StandardOverview() {
   return (
     <SectionWrapper id="standard-overview">
       <h2 className="font-display text-4xl md:text-5xl text-stone-900 leading-tight">
-        What the Standard actually asks
+        What the standard asks beyond qualifications
       </h2>
       <p className="mt-6 text-lg text-stone-700">
         The Competence and Conduct Standard isn&apos;t a qualifications register.
@@ -34,7 +34,7 @@ export default function StandardOverview() {
           href="/standard"
           className="text-teal-700 hover:text-teal-800 underline-offset-2 hover:underline"
         >
-          Read the full breakdown →
+          Read the full breakdown of the culture and behaviour requirements →
         </Link>
       </p>
     </SectionWrapper>
