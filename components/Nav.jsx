@@ -25,8 +25,7 @@ export default function Nav() {
   return (
     <nav className="sticky top-0 z-50 bg-warm-light/90 backdrop-blur border-b border-warm-mid">
       <div className="max-w-[84rem] mx-auto px-6">
-        {/* Row 1 — logo + explainer (and hamburger on mobile) */}
-        <div className="py-3 flex items-center justify-between gap-4">
+        <div className="py-3 flex items-center justify-between gap-6">
           <Link
             href="/"
             className="group flex items-start gap-3"
@@ -70,44 +69,44 @@ export default function Nav() {
               </svg>
             )}
           </button>
-        </div>
 
-        {/* Row 2 — desktop tiers */}
-        <div className="hidden md:flex items-stretch pb-3 gap-6">
-          {/* Context group */}
-          <div className="flex flex-col" style={{ gap: '4px' }}>
-            <span className="font-body text-[10px] uppercase tracking-[0.08em] text-ink-faint">
-              Context
-            </span>
-            <div className="flex items-center gap-4">
-              {contextLinks.map((l) => (
-                <ContextLink key={l.href} href={l.href} active={isActive(l.href)}>
-                  {l.label}
-                </ContextLink>
-              ))}
+          {/* Desktop tiers — right side, single row */}
+          <div className="hidden md:flex items-stretch gap-6">
+            {/* Context group */}
+            <div className="flex flex-col" style={{ gap: '4px' }}>
+              <span className="font-body text-[10px] uppercase tracking-[0.08em] text-ink-faint">
+                Context
+              </span>
+              <div className="flex items-center gap-4">
+                {contextLinks.map((l) => (
+                  <ContextLink key={l.href} href={l.href} active={isActive(l.href)}>
+                    {l.label}
+                  </ContextLink>
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Vertical divider */}
-          <div aria-hidden className="w-px bg-warm-mid self-stretch" />
+            {/* Vertical divider */}
+            <div aria-hidden className="w-px bg-warm-mid self-stretch" />
 
-          {/* Tools group */}
-          <div className="flex flex-col ml-auto items-end" style={{ gap: '4px' }}>
-            <span className="font-body text-[10px] uppercase tracking-[0.08em] text-ink-faint">
-              Tools
-            </span>
-            <div className="flex items-center gap-3">
-              {toolLinks.map((l) => (
-                <ToolPill key={l.href} href={l.href} active={isActive(l.href)}>
-                  {l.label}
-                </ToolPill>
-              ))}
-              <DiagnosticButton
-                href={diagnosticLink.href}
-                active={isActive(diagnosticLink.href)}
-              >
-                {diagnosticLink.label}
-              </DiagnosticButton>
+            {/* Tools group */}
+            <div className="flex flex-col" style={{ gap: '4px' }}>
+              <span className="font-body text-[10px] uppercase tracking-[0.08em] text-ink-faint">
+                Tools
+              </span>
+              <div className="flex items-center gap-3">
+                {toolLinks.map((l) => (
+                  <ToolPill key={l.href} href={l.href} active={isActive(l.href)}>
+                    {l.label}
+                  </ToolPill>
+                ))}
+                <DiagnosticButton
+                  href={diagnosticLink.href}
+                  active={isActive(diagnosticLink.href)}
+                >
+                  {diagnosticLink.label}
+                </DiagnosticButton>
+              </div>
             </div>
           </div>
         </div>
