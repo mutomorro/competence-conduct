@@ -207,7 +207,7 @@ export default function QuestionsPage() {
       <SectionWrapper id="top">
         <div className="max-w-[56rem]">
           <p className="text-xs uppercase tracking-[0.05em] font-medium text-purple-accent mb-2">
-            Five Questions
+            Key Questions
           </p>
           <h1 className="font-display font-normal text-[2.75rem] md:text-[3.625rem] leading-[1.05] tracking-tight text-ink">
             Five culture questions for housing leadership teams
