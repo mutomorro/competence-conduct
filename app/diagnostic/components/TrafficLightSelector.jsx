@@ -40,7 +40,7 @@ export default function TrafficLightSelector({
     <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
       <div
         role="radiogroup"
-        aria-label={`${statementText} — select Embedded, Working on it, or Needs attention`}
+        aria-label={`${statementText} - select Embedded, Working on it, or Needs attention`}
         className="flex items-center gap-3"
       >
         {trafficLightOptions.map((opt) => {

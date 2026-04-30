@@ -31,7 +31,7 @@ export default function DimensionScreen({
   return (
     <div className="mx-auto max-w-[84rem] px-6 py-10 md:py-14">
       <div className="grid gap-10 md:gap-12 md:grid-cols-[2fr_3fr]">
-        {/* Left column — context */}
+        {/* Left column - context */}
         <div className="md:pr-4">
           <p className="font-body text-xs uppercase tracking-[0.05em] font-medium text-purple-accent">
             Dimension {dimension.id} of {total}
@@ -55,39 +55,42 @@ export default function DimensionScreen({
           </p>
         </div>
 
-        {/* Right column — statements */}
-        <div className="bg-white border border-warm-mid p-6 md:p-8">
-          <p className="font-body text-[15px] text-ink-muted">
-            For each statement, mark where your organisation stands
-            today.
-          </p>
-          <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 font-body text-[13px] text-ink-muted">
-            {trafficLightOptions.map((opt) => (
-              <span key={opt.value} className="flex items-center gap-2">
-                <span
-                  className="inline-block h-2.5 w-2.5 rounded-full"
-                  style={{ backgroundColor: opt.colour }}
-                  aria-hidden
-                />
-                {opt.value === 'embedded'
-                  ? 'Embedded'
-                  : opt.value === 'working'
-                  ? 'Working on it'
-                  : 'Needs attention'}
-              </span>
-            ))}
+        {/* Right column - statements */}
+        <div className="bg-white border border-warm-mid">
+          {/* Chrome: instruction + legend */}
+          <div className="bg-warm-light border-b border-warm-mid px-6 md:px-8 py-4 md:py-5">
+            <p className="font-body text-[14px] text-ink-muted">
+              For each statement, mark where your organisation stands today.
+            </p>
+            <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 font-body text-[13px] text-ink-muted">
+              {trafficLightOptions.map((opt) => (
+                <span key={opt.value} className="flex items-center gap-2">
+                  <span
+                    className="inline-block h-2.5 w-2.5 rounded-full"
+                    style={{ backgroundColor: opt.colour }}
+                    aria-hidden
+                  />
+                  {opt.value === 'embedded'
+                    ? 'Embedded'
+                    : opt.value === 'working'
+                    ? 'Working on it'
+                    : 'Needs attention'}
+                </span>
+              ))}
+            </div>
           </div>
 
-          <div className="mt-6 divide-y divide-warm-mid">
-            {dimension.statements.map((s, i) => (
-              <div key={s.id} className={i === 0 ? 'pb-6' : 'py-6 last:pb-0'}>
+          {/* Statements area */}
+          <div className="px-6 md:px-8 py-8 md:py-10 space-y-10 md:space-y-12">
+            {dimension.statements.map((s) => (
+              <div key={s.id}>
                 <p className="font-body text-[11px] uppercase tracking-[0.05em] font-medium text-purple-accent">
                   {s.label}
                 </p>
-                <p className="mt-2 font-display text-[17px] md:text-[18px] font-normal leading-[1.45] text-ink">
+                <p className="mt-3 font-display text-[20px] md:text-[22px] font-normal leading-[1.4] text-ink">
                   {s.text}
                 </p>
-                <div className="mt-4">
+                <div className="mt-5">
                   <TrafficLightSelector
                     statementId={s.id}
                     statementText={s.text}
@@ -97,20 +100,20 @@ export default function DimensionScreen({
                 </div>
               </div>
             ))}
-          </div>
 
-          {showNudge && !allAnswered ? (
-            <p
-              className="mt-6 font-body text-[14px] text-ink-muted bg-warm-light border-l-[3px] border-purple-accent px-4 py-3"
-              role="status"
-            >
-              You haven&apos;t marked all statements — press{' '}
-              <strong className="text-ink">
-                {isLast ? 'See your results' : 'Next dimension'}
-              </strong>{' '}
-              again to continue anyway.
-            </p>
-          ) : null}
+            {showNudge && !allAnswered ? (
+              <p
+                className="font-body text-[14px] text-ink-muted bg-warm-light border-l-[3px] border-purple-accent px-4 py-3"
+                role="status"
+              >
+                You haven&apos;t marked all statements - press{' '}
+                <strong className="text-ink">
+                  {isLast ? 'See your results' : 'Next dimension'}
+                </strong>{' '}
+                again to continue anyway.
+              </p>
+            ) : null}
+          </div>
         </div>
       </div>
 

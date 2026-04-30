@@ -4,7 +4,7 @@ export const dimensions = [
     slug: 'codes-of-conduct',
     name: 'Codes of conduct in practice',
     context:
-      'The standard requires providers to adopt or develop a code of conduct and ensure it is embedded across the organisation. "Embedded" is doing significant work — a code that exists as a document signed at induction does not meet this requirement.',
+      'The standard requires providers to adopt or develop a code of conduct and ensure it is embedded across the organisation. "Embedded" is doing significant work - a code that exists as a document signed at induction does not meet this requirement.',
     statements: [
       {
         id: '1a',
@@ -60,7 +60,7 @@ export const dimensions = [
     slug: 'resident-voice',
     name: 'Resident voice',
     context:
-      'The standard requires that residents have "meaningful opportunities to influence and scrutinise" your competence policy and code of conduct. Influence is a higher bar than consultation — it means shaping what gets built, not responding to something already designed.',
+      'The standard requires that residents have "meaningful opportunities to influence and scrutinise" your competence policy and code of conduct. Influence is a higher bar than consultation - it means shaping what gets built, not responding to something already designed.',
     statements: [
       {
         id: '3a',
@@ -88,12 +88,12 @@ export const dimensions = [
     slug: 'leadership-signal',
     name: 'Leadership signal',
     context:
-      'What leadership pays attention to, spends time on, and talks about communicates what matters more than any policy statement. The standard expects culture and conduct to be visibly led — not delegated to HR or treated as a compliance exercise.',
+      'What leadership pays attention to, spends time on, and talks about communicates what matters more than any policy statement. The standard expects culture and conduct to be visibly led - not delegated to HR or treated as a compliance exercise.',
     statements: [
       {
         id: '4a',
         label: 'Statement 4a',
-        text: 'Senior leaders visibly prioritise culture and behaviour — in their time, attention, and language',
+        text: 'Senior leaders visibly prioritise culture and behaviour - in their time, attention, and language',
       },
       {
         id: '4b',
@@ -116,7 +116,7 @@ export const dimensions = [
     slug: 'learning-and-development',
     name: 'Learning and development',
     context:
-      'The standard requires a written workforce development policy that connects learning to outcomes — not just skills acquisition. The gap between "we delivered the training" and "here\'s what changed because of it" is where most providers will need to do new thinking.',
+      'The standard requires a written workforce development policy that connects learning to outcomes - not just skills acquisition. The gap between "we delivered the training" and "here\'s what changed because of it" is where most providers will need to do new thinking.',
     statements: [
       {
         id: '5a',
@@ -144,7 +144,7 @@ export const dimensions = [
     slug: 'evidence-and-accountability',
     name: 'Evidence and accountability',
     context:
-      'The Regulator will take an outcomes-focused, assurance-led approach. That means the evidence trail matters — not as a compliance exercise, but as the way you demonstrate that culture work is genuine, embedded, and making a difference to residents.',
+      'The Regulator will take an outcomes-focused, assurance-led approach. That means the evidence trail matters - not as a compliance exercise, but as the way you demonstrate that culture work is genuine, embedded, and making a difference to residents.',
     statements: [
       {
         id: '6a',

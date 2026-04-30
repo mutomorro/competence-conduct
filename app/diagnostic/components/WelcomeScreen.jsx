@@ -13,7 +13,7 @@ export default function WelcomeScreen({ onStart }) {
       <div className="mt-8 space-y-5 text-[17px] text-ink-muted leading-[1.7]">
         <p>
           A reflective pulse check across six dimensions of the
-          Competence and Conduct Standard. Not a compliance quiz — a
+          Competence and Conduct Standard. Not a compliance quiz - a
           structured way to surface where the culture work is, and
           where it isn&apos;t.
         </p>
