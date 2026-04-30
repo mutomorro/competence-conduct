@@ -17,22 +17,6 @@ const sourceSans = Source_Sans_3({
   display: 'swap',
 })
 
-export const metadata = {
-  title:
-    'Beyond Qualifications | The culture side of the Competence and Conduct Standard',
-  description:
-    'A thinking guide and diagnostic tool for housing leaders navigating the culture and behaviour requirements of the Competence and Conduct Standard (October 2026).',
-  openGraph: {
-    title: 'Beyond Qualifications',
-    description:
-      'The Competence and Conduct Standard requires culture change. This guide is about the half nobody is helping with.',
-    url: 'https://competence-conduct.org',
-    siteName: 'Competence & Conduct',
-    locale: 'en_GB',
-    type: 'website',
-  },
-}
-
 export default function RootLayout({ children }) {
   return (
     <html
