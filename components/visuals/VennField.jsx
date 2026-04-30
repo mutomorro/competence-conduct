@@ -34,14 +34,15 @@ export default function VennField({
   ...rest
 }) {
   const pairs = useMemo(() => {
+    const round = (n) => Math.round(n * 1e4) / 1e4
     const out = []
     for (let i = 0; i < density; i++) {
       out.push({
-        cx: rand(i * 2, seed) * 100,
-        cy: rand(i * 2 + 1, seed) * 100,
-        size: 6 + rand(i * 3, seed) * 16,
-        rot: rand(i * 5, seed) * 360,
-        phase: rand(i * 7, seed),
+        cx: round(rand(i * 2, seed) * 100),
+        cy: round(rand(i * 2 + 1, seed) * 100),
+        size: round(6 + rand(i * 3, seed) * 16),
+        rot: round(rand(i * 5, seed) * 360),
+        phase: round(rand(i * 7, seed)),
         key: i,
       })
     }
@@ -65,7 +66,12 @@ export default function VennField({
           const dx = r * 0.55
           const animStyle = animated
             ? {
-                animation: `venn-drift ${duration}s ease-in-out ${(-d.phase * duration).toFixed(2)}s infinite alternate`,
+                animationName: 'venn-drift',
+                animationDuration: `${duration}s`,
+                animationTimingFunction: 'ease-in-out',
+                animationDelay: `${(-d.phase * duration).toFixed(2)}s`,
+                animationIterationCount: 'infinite',
+                animationDirection: 'alternate',
                 transformOrigin: `${d.cx}px ${d.cy}px`,
               }
             : {}
