@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import SectionWrapper from '../components/SectionWrapper.jsx'
 import VennField from '../components/visuals/VennField.jsx'
+import DottedShapeSeparator from '../components/visuals/DottedShapeSeparator.jsx'
 
 export const metadata = {
   title:
@@ -93,6 +94,8 @@ export default function Home() {
         </div>
       </section>
 
+      <DottedShapeSeparator shape="arc" />
+
       {/* Section 2 — Our reading of the standard */}
       <SectionWrapper id="our-reading">
         <h2 className="font-display font-normal text-[1.75rem] md:text-[2.25rem] leading-[1.15] text-ink">
@@ -128,8 +131,10 @@ export default function Home() {
         </p>
       </SectionWrapper>
 
+      <DottedShapeSeparator shape="wave" />
+
       {/* Section 3 — Tools for leadership teams */}
-      <SectionWrapper id="tools" className="!pt-0">
+      <SectionWrapper id="tools">
         <h2 className="font-display font-normal text-[1.75rem] md:text-[2.25rem] leading-[1.15] text-ink">
           Tools for leadership teams
         </h2>
@@ -170,8 +175,10 @@ export default function Home() {
         </div>
       </SectionWrapper>
 
+      <DottedShapeSeparator shape="lozenge" />
+
       {/* Section 4 — Where to start */}
-      <SectionWrapper id="where-to-start" className="!pt-0">
+      <SectionWrapper id="where-to-start">
         <h2 className="font-display font-normal text-[1.75rem] md:text-[2.25rem] leading-[1.15] text-ink">
           Where to start
         </h2>
