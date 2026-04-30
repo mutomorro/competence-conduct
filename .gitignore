@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local working docs / handoff scratch
+/docs
+
+# claude code local config (preview server, local settings)
+/.claude

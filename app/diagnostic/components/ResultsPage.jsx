@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import ResultsHeader from './ResultsHeader'
 import { dimensions, trafficLightOptions } from '../data/dimensions'
+import DimensionGlyph from '../../../components/visuals/DimensionGlyph'
 
 const optionByValue = Object.fromEntries(
   trafficLightOptions.map((o) => [o.value, o])
@@ -127,14 +128,11 @@ function StatPill({ colour, count, label }) {
 function DimensionCell({ dimension, responses }) {
   return (
     <div className="dimension-cell bg-white border border-warm-mid p-6 flex flex-col">
-      <div className="flex items-baseline gap-3 pb-4 border-b border-warm-mid">
-        <span
-          className="font-body text-[13px] tracking-[0.05em] text-ink-faint"
-          aria-hidden
-        >
-          {String(dimension.id).padStart(2, '0')}
+      <div className="flex items-start gap-3 pb-4 border-b border-warm-mid">
+        <span className="text-purple-accent shrink-0" aria-hidden>
+          <DimensionGlyph slug={dimension.slug} size={28} />
         </span>
-        <h2 className="font-display font-medium text-[18px] md:text-[19px] leading-tight text-ink">
+        <h2 className="font-display font-medium text-[18px] md:text-[19px] leading-tight text-ink mt-1">
           {dimension.name}
         </h2>
       </div>

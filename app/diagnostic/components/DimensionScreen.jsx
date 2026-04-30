@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import TrafficLightSelector from './TrafficLightSelector'
 import { trafficLightOptions } from '../data/dimensions'
+import DimensionGlyph from '../../../components/visuals/DimensionGlyph'
 
 export default function DimensionScreen({
   dimension,
@@ -36,12 +37,17 @@ export default function DimensionScreen({
           <p className="font-body text-xs uppercase tracking-[0.05em] font-medium text-purple-accent">
             Dimension {dimension.id} of {total}
           </p>
-          <div
-            className="mt-4 font-display font-normal text-ink-faint leading-none"
-            style={{ fontSize: 'clamp(56px, 8vw, 80px)' }}
-            aria-hidden
-          >
-            {String(dimension.id).padStart(2, '0')}
+          <div className="mt-5 flex items-end gap-4">
+            <span className="text-purple-accent shrink-0">
+              <DimensionGlyph slug={dimension.slug} size={44} />
+            </span>
+            <div
+              className="font-display font-normal text-ink-faint leading-none"
+              style={{ fontSize: 'clamp(56px, 8vw, 80px)' }}
+              aria-hidden
+            >
+              {String(dimension.id).padStart(2, '0')}
+            </div>
           </div>
           <h2 className="mt-3 font-display font-normal text-[1.75rem] md:text-[2rem] leading-[1.15] tracking-tight text-ink">
             {dimension.name}

@@ -360,7 +360,7 @@ export default function StandardPage() {
                 total={5}
                 title="The two halves of the standard"
               />
-              <PullQuote>
+              <PullQuote decorated>
                 The qualification requirements get most of the attention.
                 The culture requirements will do most of the work.
               </PullQuote>
