@@ -47,6 +47,19 @@ body {
 }
 
 /* -------------------------------------------------------------
+   Editorial drop cap — apply to a paragraph: <p class="dropcap">
+   ------------------------------------------------------------- */
+.dropcap::first-letter {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 4.5em;
+  line-height: 0.85;
+  float: left;
+  margin: 0.05em 0.12em 0 -0.04em;
+  color: var(--color-ink);
+}
+
+/* -------------------------------------------------------------
    Default table styling — apply with `.table-default` className
    ------------------------------------------------------------- */
 .table-default {
