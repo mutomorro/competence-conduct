@@ -4,12 +4,13 @@ const links = [
   { href: '/standard', label: 'The Standard' },
   { href: '/questions', label: 'Five Questions' },
   { href: '/diagnostic', label: 'Diagnostic' },
+  { href: '/challenges', label: 'Challenges' },
 ]
 
 export default function Nav() {
   return (
     <nav className="sticky top-0 z-50 bg-stone-50/90 backdrop-blur border-b border-stone-200">
-      <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-[1350px] mx-auto px-6 py-4 flex items-center justify-between">
         <Link
           href="/"
           className="font-display text-xl text-stone-900 tracking-tight"

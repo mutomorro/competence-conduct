@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="max-w-[42rem] mx-auto px-6 pt-28 pb-32"
+      className="max-w-[1350px] mx-auto px-6 pt-28 pb-32"
     >
       <h1 className="font-display text-6xl md:text-7xl leading-[1.05] text-stone-900 tracking-tight">
         Beyond Qualifications

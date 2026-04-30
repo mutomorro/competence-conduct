@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="border-t border-stone-200 mt-12">
-      <div className="max-w-[42rem] mx-auto px-6 py-10 text-sm text-stone-500">
+      <div className="max-w-[1350px] mx-auto px-6 py-10 text-sm text-stone-500">
         Built by{' '}
         <a
           href="https://mutomorro.com"

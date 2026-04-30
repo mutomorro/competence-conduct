@@ -23,7 +23,7 @@
   --color-dim-5: #7a5b5b;
   --color-dim-6: #5b7a5f;
 
-  --content-max: 42rem;
+  --content-max: 1350px;
 }
 
 @theme inline {
