@@ -12,7 +12,7 @@ export default function StandardOverview() {
   return (
     <SectionWrapper id="standard-overview">
       <div className="max-w-[42rem]">
-        <h2 className="font-display text-[1.75rem] md:text-[2.25rem] leading-[1.2] text-ink">
+        <h2 className="font-display font-semibold text-[1.75rem] md:text-[2.25rem] leading-[1.2] text-ink">
           What the standard asks beyond qualifications
         </h2>
         <p className="mt-5">

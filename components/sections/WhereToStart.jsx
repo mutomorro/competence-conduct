@@ -19,7 +19,7 @@ export default function WhereToStart() {
   return (
     <SectionWrapper id="where-to-start">
       <div className="max-w-[56rem]">
-        <h2 className="font-display text-[1.75rem] md:text-[2.25rem] leading-[1.2] text-ink">
+        <h2 className="font-display font-semibold text-[1.75rem] md:text-[2.25rem] leading-[1.2] text-ink">
           Where to start
         </h2>
         <p className="mt-5 max-w-[42rem]">
@@ -28,7 +28,7 @@ export default function WhereToStart() {
         <ol className="mt-8 space-y-6">
           {steps.map((step, i) => (
             <li key={step.title} className="flex gap-4">
-              <span className="font-display text-3xl text-purple-accent leading-none mt-1 shrink-0">
+              <span className="font-display font-normal text-3xl text-purple-accent leading-none mt-1 shrink-0">
                 {i + 1}
               </span>
               <div>

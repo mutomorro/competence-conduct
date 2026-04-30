@@ -41,7 +41,7 @@ function Kicker({ children }) {
 
 function SectionHeading({ children }) {
   return (
-    <h2 className="font-display text-[1.75rem] md:text-[2.25rem] leading-[1.2] text-ink">
+    <h2 className="font-display font-semibold text-[1.75rem] md:text-[2.25rem] leading-[1.2] text-ink">
       {children}
     </h2>
   )
@@ -49,7 +49,7 @@ function SectionHeading({ children }) {
 
 function PullOut({ children }) {
   return (
-    <p className="mt-5 font-display text-lg leading-[1.5] text-ink-muted bg-warm-light border-l-[3px] border-warm-mid px-5 py-4 max-w-[42rem]">
+    <p className="mt-5 font-display font-medium italic text-lg leading-[1.5] text-ink-muted bg-warm-light border-l-[3px] border-warm-mid px-5 py-4 max-w-[42rem]">
       {children}
     </p>
   )
@@ -231,7 +231,7 @@ export default function StandardPage() {
       <SectionWrapper id="top">
         <div className="max-w-[56rem]">
           <Kicker>The Standard</Kicker>
-          <h1 className="font-display text-[2.5rem] md:text-[3.5rem] leading-[1.05] tracking-tight text-ink">
+          <h1 className="font-display font-bold text-[2.5rem] md:text-[3.5rem] leading-[1.05] tracking-tight text-ink">
             The Competence and Conduct Standard: culture and behaviour
             requirements
           </h1>
@@ -540,7 +540,7 @@ export default function StandardPage() {
                   href={c.href}
                   className="group block bg-warm-light border-l-[3px] border-purple-accent hover:bg-warm-light/70 transition-colors p-6"
                 >
-                  <h3 className="font-display text-[1.25rem] leading-[1.3] text-ink">
+                  <h3 className="font-display font-semibold text-[1.25rem] leading-[1.3] text-ink">
                     {c.title}
                   </h3>
                   <p className="mt-3 text-ink-muted">{c.body}</p>
