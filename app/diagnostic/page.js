@@ -47,48 +47,50 @@ export default function DiagnosticPage() {
   return (
     <article>
       <SectionWrapper id="top">
-        <p className="text-sm uppercase tracking-widest text-stone-500">
-          Diagnostic
-        </p>
-        <h1 className="mt-3 font-display text-5xl md:text-6xl text-stone-900 leading-[1.05] tracking-tight">
-          Competence and Conduct Standard: culture readiness diagnostic
-        </h1>
-        <p className="mt-8 text-lg text-stone-700">
-          Placeholder introduction. Six dimensions, structured prompts, a clear
-          picture of where your organisation stands today. Use it as a board
-          pack input, an executive away-day starter, or a working document for
-          your people team. Interactive version coming soon.
-        </p>
-
-        <ol className="mt-12 space-y-10">
-          {dimensions.map((d, i) => (
-            <li
-              key={d.title}
-              className="border border-stone-200 rounded-md bg-stone-100 p-7"
-            >
-              <div className="flex items-baseline gap-4">
-                <span className="font-display text-2xl text-teal-700 shrink-0">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <h2 className="font-display text-2xl md:text-3xl text-stone-900 leading-tight">
-                  {d.title}
-                </h2>
-              </div>
-              <p className="mt-4 text-stone-700">{d.body}</p>
-            </li>
-          ))}
-        </ol>
-
-        <div className="mt-16 border-t border-stone-200 pt-10">
-          <p className="text-lg text-stone-700">
-            Haven&apos;t explored the five questions yet?{' '}
-            <Link
-              href="/questions"
-              className="text-teal-700 hover:text-teal-800 underline-offset-2 hover:underline"
-            >
-              Start with the questions →
-            </Link>
+        <div className="max-w-[56rem]">
+          <p className="text-xs uppercase tracking-[0.05em] font-medium text-purple-accent mb-2">
+            Diagnostic
           </p>
+          <h1 className="font-display text-[2.5rem] leading-[1.2] text-ink tracking-tight">
+            Competence and Conduct Standard: culture readiness diagnostic
+          </h1>
+          <p className="mt-8 max-w-[42rem]">
+            Placeholder introduction. Six dimensions, structured prompts, a
+            clear picture of where your organisation stands today. Use it as
+            a board pack input, an executive away-day starter, or a working
+            document for your people team. Interactive version coming soon.
+          </p>
+
+          <ol className="mt-12 space-y-8">
+            {dimensions.map((d, i) => (
+              <li
+                key={d.title}
+                className="bg-warm-light border-l-[3px] border-purple-accent p-7"
+              >
+                <div className="flex items-baseline gap-4">
+                  <span className="font-display text-2xl text-purple-accent shrink-0">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <h3 className="text-xl font-semibold text-ink leading-[1.4]">
+                    {d.title}
+                  </h3>
+                </div>
+                <p className="mt-3 max-w-[42rem] text-ink-muted">{d.body}</p>
+              </li>
+            ))}
+          </ol>
+
+          <div className="mt-16 border-t border-warm-mid pt-10">
+            <p className="max-w-[42rem]">
+              Haven&apos;t explored the five questions yet?{' '}
+              <Link
+                href="/questions"
+                className="text-purple-accent font-medium hover:underline underline-offset-2"
+              >
+                Start with the questions →
+              </Link>
+            </p>
+          </div>
         </div>
       </SectionWrapper>
     </article>

@@ -25,25 +25,25 @@ const resources = [
 export default function ResourceCards() {
   return (
     <SectionWrapper id="resources">
-      <h2 className="font-display text-4xl md:text-5xl text-stone-900 leading-tight">
+      <h2 className="font-display text-[1.75rem] leading-[1.3] text-ink">
         Three resources for leadership teams
       </h2>
-      <p className="mt-6 text-lg text-stone-700">
-        Designed to be used together — challenges to understand, questions
-        to think with, and a diagnostic to act on.
+      <p className="mt-5 max-w-[42rem]">
+        Designed to be used together — challenges to understand, questions to
+        think with, and a diagnostic to act on.
       </p>
       <div className="mt-10 grid gap-6 md:grid-cols-3">
         {resources.map((r) => (
           <Link
             key={r.href}
             href={r.href}
-            className="group block border border-stone-200 rounded-md bg-stone-100 hover:bg-stone-50 hover:border-stone-300 transition-colors p-7"
+            className="group block bg-warm-light border-l-[3px] border-purple-accent hover:bg-warm-light/70 transition-colors p-7"
           >
-            <h3 className="font-display text-2xl text-stone-900 leading-tight">
+            <h3 className="font-display text-[1.5rem] leading-[1.3] text-ink">
               {r.title}
             </h3>
-            <p className="mt-3 text-stone-700">{r.body}</p>
-            <p className="mt-5 text-teal-700 group-hover:text-teal-800">
+            <p className="mt-3 text-ink-muted">{r.body}</p>
+            <p className="mt-5 text-purple-accent font-medium">
               {r.cta} →
             </p>
           </Link>

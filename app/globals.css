@@ -1,34 +1,29 @@
 @import "tailwindcss";
 
 @theme {
-  --color-stone-50: #fafaf8;
-  --color-stone-100: #f5f4f0;
-  --color-stone-200: #e8e6df;
-  --color-stone-300: #d4d0c6;
-  --color-stone-400: #b5ae9f;
-  --color-stone-500: #8f8778;
-  --color-stone-600: #6b6356;
-  --color-stone-700: #504a3f;
-  --color-stone-800: #37332b;
-  --color-stone-900: #1f1d18;
+  /* Brand */
+  --color-purple-primary: #9b51e1;
+  --color-purple-accent: #6366f1;
 
-  --color-teal-600: #1a6b63;
-  --color-teal-700: #155952;
-  --color-teal-800: #104840;
+  /* Surfaces */
+  --color-warm-light: #f6f5f0;
+  --color-warm-mid: #e8e3db;
 
-  --color-dim-1: #5b7e7a;
-  --color-dim-2: #7a6e5b;
-  --color-dim-3: #5b6e7a;
-  --color-dim-4: #6e5b7a;
-  --color-dim-5: #7a5b5b;
-  --color-dim-6: #5b7a5f;
+  /* Ink (text) */
+  --color-ink: #111111;
+  --color-ink-muted: #555555;
+  --color-ink-faint: #999999;
 
-  --content-max: 1350px;
+  /* Override defaults */
+  --color-black: #111111;
+
+  /* Layout token (reference; not used as utility) */
+  --content-max: 84rem;
 }
 
 @theme inline {
   --font-display: var(--font-instrument-serif), Georgia, serif;
-  --font-body: var(--font-source-sans), "Source Sans Pro", system-ui, sans-serif;
+  --font-body: var(--font-outfit), system-ui, sans-serif;
 }
 
 html {
@@ -39,12 +34,56 @@ html {
 
 body {
   font-family: var(--font-body);
-  color: var(--color-stone-800);
-  background-color: var(--color-stone-50);
+  color: var(--color-ink);
+  background-color: #ffffff;
   line-height: 1.7;
+  font-size: 1.0625rem; /* 17px - body per design system */
 }
 
 ::selection {
-  background-color: var(--color-teal-600);
+  background-color: var(--color-purple-accent);
   color: white;
+}
+
+/* -------------------------------------------------------------
+   Default table styling — apply with `.table-default` className
+   ------------------------------------------------------------- */
+.table-default {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+}
+
+.table-default thead th {
+  background-color: var(--color-warm-light);
+  color: var(--color-purple-accent);
+  font-size: 0.8125rem; /* 13px */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-warm-mid);
+}
+
+.table-default tbody td {
+  color: var(--color-ink);
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-warm-mid);
+  vertical-align: top;
+}
+
+.table-default tbody tr:nth-child(even) td {
+  background-color: var(--color-warm-light);
+}
+
+.table-default tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Mobile: allow horizontal scroll on small screens */
+.table-default-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }

@@ -1,4 +1,4 @@
-import { Instrument_Serif, Source_Sans_3 } from 'next/font/google'
+import { Instrument_Serif, Outfit } from 'next/font/google'
 import './globals.css'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
@@ -11,9 +11,9 @@ const instrumentSerif = Instrument_Serif({
   display: 'swap',
 })
 
-const sourceSans = Source_Sans_3({
+const outfit = Outfit({
   subsets: ['latin'],
-  variable: '--font-source-sans',
+  variable: '--font-outfit',
   display: 'swap',
 })
 
@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${instrumentSerif.variable} ${sourceSans.variable}`}
+      className={`${instrumentSerif.variable} ${outfit.variable}`}
     >
       <body className="min-h-screen flex flex-col">
         <Nav />

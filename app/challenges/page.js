@@ -22,10 +22,18 @@ function ExtLink({ href, children }) {
       href={href}
       target="_blank"
       rel="noopener"
-      className="text-teal-700 hover:text-teal-800 underline-offset-2 hover:underline"
+      className="text-purple-accent font-medium hover:underline underline-offset-2"
     >
       {children}
     </a>
+  )
+}
+
+function SubLabel({ children }) {
+  return (
+    <h4 className="text-sm uppercase tracking-[0.03em] font-semibold text-purple-accent">
+      {children}
+    </h4>
   )
 }
 
@@ -33,7 +41,7 @@ const challenges = [
   {
     title: 'Evidencing culture change - not just training delivery',
     requires: (
-      <p className="mt-2 text-stone-700">
+      <p className="mt-2">
         Providers must show that staff development translates into outcomes -
         not just attendance records. The Regulator will focus on the quality of
         your evidence and the efficacy of your systems. Comprehensive records of
@@ -44,14 +52,14 @@ const challenges = [
     ),
     whyHard: (
       <>
-        <p className="mt-2 text-stone-700">
+        <p className="mt-2">
           Most housing providers have well-established systems for tracking
           training. Completion rates, course attendance, CPD hours - these are
           straightforward to record and report. But the standard is asking for
           something different: evidence that development has changed how people
           behave, not just what they know.
         </p>
-        <p className="mt-3 text-stone-700">
+        <p className="mt-3">
           That&apos;s a fundamentally different kind of evidence. It means
           connecting your L&amp;D activity to resident-facing metrics - tenant
           satisfaction measures, complaint patterns, service quality
@@ -62,7 +70,7 @@ const challenges = [
             investment in development?
           </em>
         </p>
-        <p className="mt-3 text-stone-700">
+        <p className="mt-3">
           The gap between &quot;we delivered the training&quot; and
           &quot;here&apos;s what changed because of it&quot; is where most
           providers will need to do new thinking.
@@ -70,7 +78,7 @@ const challenges = [
       </>
     ),
     startingPoint: (
-      <p className="mt-2 text-stone-700">
+      <p className="mt-2">
         Map your current L&amp;D reporting against the evidence the Regulator
         is likely to expect. If your reports show inputs (who attended what)
         but not outcomes (what changed as a result), that gap is your first
@@ -85,7 +93,7 @@ const challenges = [
     title:
       'Defining professional behaviours when the Regulator won’t do it for you',
     requires: (
-      <p className="mt-2 text-stone-700">
+      <p className="mt-2">
         Providers must ensure that all relevant staff have the right behaviours
         - not just the right knowledge and skills - to deliver high-quality
         housing services. This includes adopting or developing a code of
@@ -97,21 +105,21 @@ const challenges = [
     ),
     whyHard: (
       <>
-        <p className="mt-2 text-stone-700">
+        <p className="mt-2">
           Qualifications have clear criteria. Behaviours don&apos;t. Defining
           what &quot;good conduct&quot; means in practice - in a way that is
           specific enough to be meaningful, broad enough to apply across
           diverse roles, and grounded enough to be evidenced - is a genuinely
           difficult piece of work.
         </p>
-        <p className="mt-3 text-stone-700">
+        <p className="mt-3">
           Many providers have existing values statements and codes of conduct.
           But there&apos;s a difference between a values poster in the break
           room and a set of behavioural expectations that staff can describe in
           their own words, that managers feel confident holding people to, and
           that residents would recognise in their day-to-day experience.
         </p>
-        <p className="mt-3 text-stone-700">
+        <p className="mt-3">
           The temptation is to adopt a generic framework. The risk is that a
           borrowed framework doesn&apos;t reflect your organisation&apos;s
           actual culture, context, or the specific needs of the communities you
@@ -121,7 +129,7 @@ const challenges = [
       </>
     ),
     startingPoint: (
-      <p className="mt-2 text-stone-700">
+      <p className="mt-2">
         Test what you already have. Ask five front-line colleagues to describe
         the behaviours expected of them - without looking anything up. If the
         answers are consistent and sound like real life rather than a policy
@@ -134,7 +142,7 @@ const challenges = [
   {
     title: 'Giving residents genuine influence over your code of conduct',
     requires: (
-      <p className="mt-2 text-stone-700">
+      <p className="mt-2">
         Providers must give tenants{' '}
         <ExtLink href="https://www.gov.uk/government/consultations/competence-and-conduct-standard-for-social-housing-consultation/outcome/competence-and-conduct-standard-for-social-housing-government-response">
           meaningful opportunities to influence and scrutinise
@@ -155,19 +163,19 @@ const challenges = [
     ),
     whyHard: (
       <>
-        <p className="mt-2 text-stone-700">
+        <p className="mt-2">
           Most providers have well-developed resident engagement structures -
           panels, surveys, scrutiny groups. But the standard draws a
           distinction that matters: influence is not the same as consultation.
         </p>
-        <p className="mt-3 text-stone-700">
+        <p className="mt-3">
           Consultation typically asks residents to respond to something that
           has already been designed. Influence asks residents to shape the
           thing being designed, from the start. It means involving residents in
           defining what good conduct looks like, not reviewing a finished code
           of conduct.
         </p>
-        <p className="mt-3 text-stone-700">
+        <p className="mt-3">
           This is unfamiliar territory for many providers. It requires a
           different kind of conversation with residents - one that starts with
           their experience of how staff interact with them and works forward to
@@ -177,7 +185,7 @@ const challenges = [
       </>
     ),
     startingPoint: (
-      <p className="mt-2 text-stone-700">
+      <p className="mt-2">
         Review how your current code of conduct was developed. If residents
         were involved, at what stage? If they reviewed a draft, that&apos;s
         consultation. If their lived experience shaped the content before it
@@ -191,7 +199,7 @@ const challenges = [
   {
     title: 'The risk of treating culture change as a compliance exercise',
     requires: (
-      <p className="mt-2 text-stone-700">
+      <p className="mt-2">
         The Competence and Conduct Standard is outcome-based and assurance-led.
         Providers must be able to demonstrate that they meet the standard - not
         through a checklist, but through evidence of genuine change in how
@@ -201,7 +209,7 @@ const challenges = [
     ),
     whyHard: (
       <>
-        <p className="mt-2 text-stone-700">
+        <p className="mt-2">
           There&apos;s a real tension in how the sector is approaching this.
           The standard was designed to drive culture change - the{' '}
           <ExtLink href="https://www.gov.uk/government/consultations/competence-and-conduct-standard-for-social-housing-consultation/outcome/competence-and-conduct-standard-for-social-housing-government-response">
@@ -213,7 +221,7 @@ const challenges = [
           regulated sector is to turn requirements into processes, policies,
           and checklists.
         </p>
-        <p className="mt-3 text-stone-700">
+        <p className="mt-3">
           The risk is that providers build an impressive compliance
           architecture around the standard - written policies, recorded
           training, documented codes - without the underlying culture shifting.
@@ -221,7 +229,7 @@ const challenges = [
           notice no difference. The Regulator, taking an assurance-based
           approach, will be looking beyond the documentation.
         </p>
-        <p className="mt-3 text-stone-700">
+        <p className="mt-3">
           This risk is heightened by the decision to incorporate the competence
           and conduct requirements into the existing Transparency, Influence
           and Accountability Standard rather than as a standalone standard.{' '}
@@ -235,7 +243,7 @@ const challenges = [
       </>
     ),
     startingPoint: (
-      <p className="mt-2 text-stone-700">
+      <p className="mt-2">
         Ask your board a simple question: are we preparing for this standard as
         a compliance exercise or as a culture change programme? If the honest
         answer is compliance, the approach will need to shift. Compliance
@@ -248,7 +256,7 @@ const challenges = [
     title:
       'Culture change takes years - but the requirements start in October 2026',
     requires: (
-      <p className="mt-2 text-stone-700">
+      <p className="mt-2">
         The qualification requirements have a transition period - three years
         for larger providers, four for smaller ones. The broader culture and
         behaviour requirements do not have a separate transition period. They
@@ -257,14 +265,14 @@ const challenges = [
     ),
     whyHard: (
       <>
-        <p className="mt-2 text-stone-700">
+        <p className="mt-2">
           Research consistently suggests that meaningful culture change takes
           three to five years. That&apos;s not a comfortable timeline for a
           standard that comes into force in six months. Providers who
           haven&apos;t yet started the culture work - as distinct from the
           qualifications work - face a genuine challenge of sequencing.
         </p>
-        <p className="mt-3 text-stone-700">
+        <p className="mt-3">
           The Regulator is unlikely to expect complete culture transformation
           by October 2026. But it will expect to see that the work has started,
           that there is a credible plan, and that progress is demonstrable. The
@@ -272,7 +280,7 @@ const challenges = [
           &quot;here is where we are, here is where we&apos;re heading, and
           here is how we&apos;ll know it&apos;s working&quot; is significant.
         </p>
-        <p className="mt-3 text-stone-700">
+        <p className="mt-3">
           There&apos;s also a sequencing question that many providers are
           navigating: the qualifications programme and the culture programme
           are related but different workstreams. The risk is that the urgency
@@ -283,7 +291,7 @@ const challenges = [
       </>
     ),
     startingPoint: (
-      <p className="mt-2 text-stone-700">
+      <p className="mt-2">
         If you haven&apos;t already, separate the two workstreams explicitly.
         Give the culture work its own plan, its own timeline, its own
         leadership. It doesn&apos;t need to be finished by October 2026 - but
@@ -296,7 +304,7 @@ const challenges = [
   {
     title: 'Making this a cross-functional priority - not just an HR project',
     requires: (
-      <p className="mt-2 text-stone-700">
+      <p className="mt-2">
         The{' '}
         <ExtLink href="https://www.gov.uk/government/consultations/competence-and-conduct-standard-for-social-housing-consultation/consultation-on-a-direction-to-the-regulator-of-social-housing-to-set-a-competence-and-conduct-standard-for-social-housing">
           standard
@@ -312,14 +320,14 @@ const challenges = [
     ),
     whyHard: (
       <>
-        <p className="mt-2 text-stone-700">
+        <p className="mt-2">
           The natural home for this work in most housing organisations is HR or
           L&amp;D. They own workforce development, they manage training
           programmes, they hold the competency frameworks. But the culture
           requirements of the standard reach well beyond what HR can deliver
           alone.
         </p>
-        <p className="mt-3 text-stone-700">
+        <p className="mt-3">
           Embedding a code of conduct requires operational managers to model
           and reinforce behaviours daily. Evidencing culture change requires
           data from resident-facing teams - complaints, satisfaction measures,
@@ -327,7 +335,7 @@ const challenges = [
           collaboration with engagement teams. Getting the board ready to
           assure the Regulator requires governance input.
         </p>
-        <p className="mt-3 text-stone-700">
+        <p className="mt-3">
           When the work sits solely with HR, it tends to produce excellent
           policies and training programmes. What it often doesn&apos;t produce
           is the cross-functional alignment needed for culture to shift at the
@@ -338,7 +346,7 @@ const challenges = [
       </>
     ),
     startingPoint: (
-      <p className="mt-2 text-stone-700">
+      <p className="mt-2">
         Review who currently owns your Competence and Conduct Standard
         preparation. If it sits entirely within one function, consider whether
         the culture and behaviour workstream needs a cross-functional steering
@@ -350,131 +358,131 @@ const challenges = [
   },
 ]
 
-function SubsectionLabel({ children }) {
-  return (
-    <h3 className="text-xs uppercase tracking-widest text-stone-500 font-semibold">
-      {children}
-    </h3>
-  )
-}
-
 export default function ChallengesPage() {
   return (
     <article>
       <SectionWrapper id="top">
-        <p className="text-sm uppercase tracking-widest text-stone-500">
-          Challenges
-        </p>
-        <h1 className="mt-3 font-display text-5xl md:text-6xl text-stone-900 leading-[1.05] tracking-tight">
-          Six culture challenges in the Competence and Conduct Standard
-        </h1>
-
-        <div className="mt-8 space-y-5">
-          <p className="text-lg text-stone-700">
-            The qualification requirements in the Competence and Conduct
-            Standard have a defined path - Level 4 for senior housing managers,
-            Level 5 for senior housing executives, transition periods of three
-            to four years, CIH and others offering the courses. Challenging,
-            but structured.
+        <div className="max-w-[56rem]">
+          <p className="text-xs uppercase tracking-[0.05em] font-medium text-purple-accent mb-2">
+            Challenges
           </p>
-          <p className="text-lg text-stone-700">
-            The culture and behaviour requirements are deliberately less
-            prescribed. The{' '}
-            <ExtLink href="https://www.gov.uk/government/news/rsh-launches-consultation-on-updates-to-consumer-standards-and-requirements">
-              Regulator of Social Housing
-            </ExtLink>{' '}
-            won&apos;t provide a single framework of key skills and behaviours.
-            It will ask each provider to define what competence and conduct
-            looks like, embed it across the organisation, and evidence that
-            it&apos;s working.
-          </p>
-          <p className="text-lg text-stone-700">
-            These are six challenges that housing providers are navigating as
-            they prepare for October 2026. Each one is grounded in what the
-            standard specifically requires, and each one is an area where the
-            gap between policy and practice tends to be wider than it first
-            appears.
-          </p>
-        </div>
+          <h1 className="font-display text-[2.5rem] leading-[1.2] text-ink tracking-tight">
+            Six culture challenges in the Competence and Conduct Standard
+          </h1>
 
-        <ol className="mt-14 space-y-10">
-          {challenges.map((c, i) => (
-            <li
-              key={c.title}
-              className="border border-stone-200 rounded-md bg-stone-100 p-7 md:p-9"
-            >
-              <div className="flex items-baseline gap-4">
-                <span className="font-display text-2xl text-teal-700 shrink-0">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <h2 className="font-display text-2xl md:text-3xl text-stone-900 leading-tight">
-                  {c.title}
-                </h2>
-              </div>
+          <div className="mt-8 space-y-5 max-w-[42rem]">
+            <p>
+              The qualification requirements in the Competence and Conduct
+              Standard have a defined path - Level 4 for senior housing
+              managers, Level 5 for senior housing executives, transition
+              periods of three to four years, CIH and others offering the
+              courses. Challenging, but structured.
+            </p>
+            <p>
+              The culture and behaviour requirements are deliberately less
+              prescribed. The{' '}
+              <ExtLink href="https://www.gov.uk/government/news/rsh-launches-consultation-on-updates-to-consumer-standards-and-requirements">
+                Regulator of Social Housing
+              </ExtLink>{' '}
+              won&apos;t provide a single framework of key skills and
+              behaviours. It will ask each provider to define what competence
+              and conduct looks like, embed it across the organisation, and
+              evidence that it&apos;s working.
+            </p>
+            <p>
+              These are six challenges that housing providers are navigating
+              as they prepare for October 2026. Each one is grounded in what
+              the standard specifically requires, and each one is an area
+              where the gap between policy and practice tends to be wider
+              than it first appears.
+            </p>
+          </div>
 
-              <div className="mt-6 space-y-7">
-                <div>
-                  <SubsectionLabel>What the standard requires</SubsectionLabel>
-                  {c.requires}
+          <ol className="mt-14">
+            {challenges.map((c, i) => (
+              <li
+                key={c.title}
+                className={
+                  i === 0
+                    ? ''
+                    : 'mt-12 pt-12 border-t border-warm-mid'
+                }
+              >
+                <div className="flex items-baseline gap-4">
+                  <span className="font-display text-2xl text-purple-accent shrink-0">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <h3 className="text-xl font-semibold text-ink leading-[1.4]">
+                    {c.title}
+                  </h3>
                 </div>
-                <div>
-                  <SubsectionLabel>Why this is hard</SubsectionLabel>
-                  {c.whyHard}
-                </div>
-                <div>
-                  <SubsectionLabel>A starting point</SubsectionLabel>
-                  {c.startingPoint}
-                </div>
-              </div>
-            </li>
-          ))}
-        </ol>
 
-        <div className="mt-16 border-t border-stone-200 pt-10">
-          <p className="text-lg text-stone-700">
-            These challenges aren&apos;t reasons for pessimism. They&apos;re
-            the areas where honest assessment now will save significant
-            difficulty later - both in meeting the standard and in creating
-            genuinely better outcomes for residents.
-          </p>
-          <p className="mt-4 text-lg text-stone-700">
-            Two resources on this site are designed to help your leadership
-            team work through them:
-          </p>
+                <div className="mt-6 space-y-7 max-w-[42rem]">
+                  <div>
+                    <SubLabel>What the standard requires</SubLabel>
+                    {c.requires}
+                  </div>
+                  <div>
+                    <SubLabel>Why this is hard</SubLabel>
+                    {c.whyHard}
+                  </div>
+                  <div>
+                    <SubLabel>A starting point</SubLabel>
+                    {c.startingPoint}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            <Link
-              href="/questions"
-              className="group block border border-stone-200 rounded-md bg-stone-100 hover:bg-stone-50 hover:border-stone-300 transition-colors p-6"
-            >
-              <h3 className="font-display text-xl text-stone-900 leading-tight">
-                Five culture questions
-              </h3>
-              <p className="mt-3 text-stone-700">
-                Reflective questions designed to surface the gap between policy
-                and practice. Each one takes about 15 minutes of honest
-                conversation.
+          <div className="mt-16 border-t border-warm-mid pt-10">
+            <div className="max-w-[42rem] space-y-4">
+              <p>
+                These challenges aren&apos;t reasons for pessimism.
+                They&apos;re the areas where honest assessment now will save
+                significant difficulty later - both in meeting the standard
+                and in creating genuinely better outcomes for residents.
               </p>
-              <p className="mt-4 text-teal-700 group-hover:text-teal-800">
-                Explore the questions →
+              <p>
+                Two resources on this site are designed to help your
+                leadership team work through them:
               </p>
-            </Link>
-            <Link
-              href="/diagnostic"
-              className="group block border border-stone-200 rounded-md bg-stone-100 hover:bg-stone-50 hover:border-stone-300 transition-colors p-6"
-            >
-              <h3 className="font-display text-xl text-stone-900 leading-tight">
-                Culture readiness diagnostic
-              </h3>
-              <p className="mt-3 text-stone-700">
-                An interactive tool that helps your leadership team assess
-                where your organisation stands across six culture dimensions of
-                the standard.
-              </p>
-              <p className="mt-4 text-teal-700 group-hover:text-teal-800">
-                Take the diagnostic →
-              </p>
-            </Link>
+            </div>
+
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              <Link
+                href="/questions"
+                className="group block bg-warm-light border-l-[3px] border-purple-accent hover:bg-warm-light/70 transition-colors p-6"
+              >
+                <h3 className="font-display text-[1.25rem] leading-[1.3] text-ink">
+                  Five culture questions
+                </h3>
+                <p className="mt-3 text-ink-muted">
+                  Reflective questions designed to surface the gap between
+                  policy and practice. Each one takes about 15 minutes of
+                  honest conversation.
+                </p>
+                <p className="mt-4 text-purple-accent font-medium">
+                  Explore the questions →
+                </p>
+              </Link>
+              <Link
+                href="/diagnostic"
+                className="group block bg-warm-light border-l-[3px] border-purple-accent hover:bg-warm-light/70 transition-colors p-6"
+              >
+                <h3 className="font-display text-[1.25rem] leading-[1.3] text-ink">
+                  Culture readiness diagnostic
+                </h3>
+                <p className="mt-3 text-ink-muted">
+                  An interactive tool that helps your leadership team assess
+                  where your organisation stands across six culture
+                  dimensions of the standard.
+                </p>
+                <p className="mt-4 text-purple-accent font-medium">
+                  Take the diagnostic →
+                </p>
+              </Link>
+            </div>
           </div>
         </div>
       </SectionWrapper>
