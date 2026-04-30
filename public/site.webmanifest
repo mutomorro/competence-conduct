@@ -1,0 +1,14 @@
+{
+  "name": "Competence & Conduct Toolkit",
+  "short_name": "C&C Toolkit",
+  "description": "A practical resource for housing leaders navigating the new Competence & Conduct Standard.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F6F4EE",
+  "theme_color": "#6366F0",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

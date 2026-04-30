@@ -15,6 +15,7 @@ export const metadata = {
     siteName: 'Competence & Conduct',
     locale: 'en_GB',
     type: 'website',
+    images: ['/og-image-1200x630.png'],
   },
 }
 
@@ -41,7 +42,7 @@ function Kicker({ children }) {
 
 function SectionHeading({ children }) {
   return (
-    <h2 className="font-display font-medium text-[1.5rem] md:text-[2rem] leading-[1.2] text-ink">
+    <h2 className="font-display font-normal text-[1.5rem] md:text-[2rem] leading-[1.2] text-ink">
       {children}
     </h2>
   )
@@ -231,7 +232,7 @@ export default function StandardPage() {
       <SectionWrapper id="top">
         <div className="max-w-[56rem]">
           <Kicker>The Standard</Kicker>
-          <h1 className="font-display font-medium text-[2.25rem] md:text-[3rem] leading-[1.05] tracking-tight text-ink">
+          <h1 className="font-display font-normal text-[2.25rem] md:text-[3rem] leading-[1.05] tracking-tight text-ink">
             The Competence and Conduct Standard: culture and behaviour
             requirements
           </h1>

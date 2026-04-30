@@ -1,21 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand */
-  --color-purple-primary: #9b51e1;
-  --color-purple-accent: #6366f1;
+  /* Brand (exact hex from /public/README.md) */
+  --color-purple-primary: #9b51e2; /* Violet — conduct */
+  --color-purple-accent: #6366f0; /* Indigo — competence */
+  --color-purple-overlap: #5e3fd3; /* Lens overlap (used in mark) */
 
   /* Surfaces */
-  --color-warm-light: #f6f5f0;
+  --color-warm-light: #f6f4ee; /* Paper */
   --color-warm-mid: #e8e3db;
 
   /* Ink (text) */
-  --color-ink: #111111;
+  --color-ink: #0e0f0e;
   --color-ink-muted: #555555;
   --color-ink-faint: #999999;
 
   /* Override defaults */
-  --color-black: #111111;
+  --color-black: #0e0f0e;
 
   /* Layout token (reference; not used as utility) */
   --content-max: 84rem;

@@ -13,6 +13,7 @@ export const metadata = {
     siteName: 'Competence & Conduct',
     locale: 'en_GB',
     type: 'website',
+    images: ['/og-image-1200x630.png'],
   },
 }
 
@@ -366,7 +367,7 @@ export default function ChallengesPage() {
           <p className="text-xs uppercase tracking-[0.05em] font-medium text-purple-accent mb-2">
             Challenges
           </p>
-          <h1 className="font-display font-medium text-[2.25rem] md:text-[3rem] leading-[1.05] tracking-tight text-ink">
+          <h1 className="font-display font-normal text-[2.25rem] md:text-[3rem] leading-[1.05] tracking-tight text-ink">
             Six culture challenges in the Competence and Conduct Standard
           </h1>
 

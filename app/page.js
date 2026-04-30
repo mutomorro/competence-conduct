@@ -16,6 +16,7 @@ export const metadata = {
     siteName: 'Competence & Conduct',
     locale: 'en_GB',
     type: 'website',
+    images: ['/og-image-1200x630.png'],
   },
 }
 

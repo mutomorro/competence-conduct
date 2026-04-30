@@ -18,9 +18,20 @@ export default function Nav() {
       <div className="max-w-[84rem] mx-auto px-6 py-4 flex items-center justify-between">
         <Link
           href="/"
-          className="font-display text-base font-medium text-ink tracking-tight hover:text-purple-accent transition-colors"
+          className="flex items-center gap-3 font-display text-base font-medium text-ink tracking-tight hover:text-purple-accent transition-colors"
         >
-          Competence <em>&amp;</em> Conduct
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo-mark.svg"
+            alt=""
+            width="28"
+            height="28"
+            aria-hidden="true"
+            className="shrink-0"
+          />
+          <span>
+            Competence <em>&amp;</em> Conduct
+          </span>
         </Link>
         <ul className="hidden md:flex items-center gap-6 text-sm">
           {links.map((link) => {
