@@ -25,7 +25,7 @@ const resources = [
 export default function ResourceCards() {
   return (
     <SectionWrapper id="resources">
-      <h2 className="font-display font-normal text-[1.5rem] md:text-[2rem] leading-[1.2] text-ink">
+      <h2 className="font-display font-normal text-[1.75rem] md:text-[2.5rem] leading-[1.15] text-ink">
         Three resources for leadership teams
       </h2>
       <p className="mt-5 max-w-[42rem]">

@@ -52,7 +52,7 @@ export default function DiagnosticPage() {
           <p className="text-xs uppercase tracking-[0.05em] font-medium text-purple-accent mb-2">
             Diagnostic
           </p>
-          <h1 className="font-display font-normal text-[2.25rem] md:text-[3rem] leading-[1.05] tracking-tight text-ink">
+          <h1 className="font-display font-normal text-[2.5rem] md:text-[3.5rem] leading-[1.05] tracking-tight text-ink">
             Competence and Conduct Standard: culture readiness diagnostic
           </h1>
           <p className="mt-8 max-w-[42rem]">

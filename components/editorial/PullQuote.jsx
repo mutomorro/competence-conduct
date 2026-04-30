@@ -13,7 +13,7 @@ export default function PullQuote({ children }) {
     <figure className="my-12 max-w-[56rem]">
       <span aria-hidden className="block h-px w-12 bg-purple-accent mb-6" />
       <blockquote>
-        <p className="font-display font-normal italic text-[1.5rem] md:text-[1.875rem] leading-[1.3] text-ink">
+        <p className="font-display font-normal italic text-[2rem] md:text-[3rem] leading-[1.2] tracking-tight text-ink">
           {children}
         </p>
       </blockquote>
