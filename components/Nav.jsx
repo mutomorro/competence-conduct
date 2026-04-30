@@ -123,16 +123,16 @@ export default function Nav() {
               <p className="font-body text-[10px] uppercase tracking-[0.08em] text-ink-faint mb-2">
                 Context
               </p>
-              <ul className="space-y-2">
+              <ul className="flex flex-wrap items-center gap-2">
                 {contextLinks.map((l) => (
                   <li key={l.href}>
-                    <MobileContextLink
+                    <ContextLink
                       href={l.href}
                       active={isActive(l.href)}
-                      onNavigate={() => setOpen(false)}
+                      onClick={() => setOpen(false)}
                     >
                       {l.label}
-                    </MobileContextLink>
+                    </ContextLink>
                   </li>
                 ))}
               </ul>
@@ -171,33 +171,15 @@ export default function Nav() {
   )
 }
 
-function ContextLink({ href, active, children }) {
+function ContextLink({ href, active, children, onClick }) {
+  const base =
+    'inline-flex items-center font-body text-[14px] rounded-md transition-colors'
+  const padding = 'px-[14px] py-[6px]'
+  const stateClass = active
+    ? 'bg-[#d8d2c3] text-ink font-semibold'
+    : 'bg-warm-mid text-ink-muted font-medium hover:bg-[#d8d2c3] hover:text-ink'
   return (
-    <Link href={href} className="font-body text-[14px] font-medium">
-      <span
-        className={
-          active
-            ? 'inline-block pb-1 border-b-2 border-purple-accent text-ink'
-            : 'inline-block pb-1 border-b-2 border-transparent text-ink-muted hover:text-ink transition-colors'
-        }
-      >
-        {children}
-      </span>
-    </Link>
-  )
-}
-
-function MobileContextLink({ href, active, children, onNavigate }) {
-  return (
-    <Link
-      href={href}
-      onClick={onNavigate}
-      className={
-        active
-          ? 'inline-block font-body text-[15px] font-semibold text-ink border-b-2 border-purple-accent pb-1'
-          : 'inline-block font-body text-[15px] font-medium text-ink-muted hover:text-ink pb-1 border-b-2 border-transparent transition-colors'
-      }
-    >
+    <Link href={href} onClick={onClick} className={`${base} ${padding} ${stateClass}`}>
       {children}
     </Link>
   )
