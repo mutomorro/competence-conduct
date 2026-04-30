@@ -24,7 +24,7 @@ export default function ChapterOpener({ id, number, total, title }) {
       </p>
       <h2
         id={id}
-        className="font-display font-normal text-[1.75rem] md:text-[2.5rem] leading-[1.15] text-ink scroll-mt-24"
+        className="font-display font-normal text-[2rem] md:text-[3rem] leading-[1.1] text-ink scroll-mt-24"
       >
         {title}
       </h2>

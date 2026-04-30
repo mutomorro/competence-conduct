@@ -367,7 +367,7 @@ export default function ChallengesPage() {
           <p className="text-xs uppercase tracking-[0.05em] font-medium text-purple-accent mb-2">
             Challenges
           </p>
-          <h1 className="font-display font-normal text-[2.5rem] md:text-[3.5rem] leading-[1.05] tracking-tight text-ink">
+          <h1 className="font-display font-normal text-[2.75rem] md:text-[3.625rem] leading-[1.05] tracking-tight text-ink">
             Six culture challenges in the Competence and Conduct Standard
           </h1>
 
@@ -454,7 +454,7 @@ export default function ChallengesPage() {
                 href="/questions"
                 className="group block bg-white border-l-[3px] border-purple-accent hover:bg-warm-light/50 transition-colors p-6"
               >
-                <h3 className="font-display font-medium text-[1.25rem] leading-[1.3] text-ink">
+                <h3 className="font-display font-medium text-[1.5rem] leading-[1.25] text-ink">
                   Five culture questions
                 </h3>
                 <p className="mt-3 text-ink-muted">
@@ -470,7 +470,7 @@ export default function ChallengesPage() {
                 href="/diagnostic"
                 className="group block bg-white border-l-[3px] border-purple-accent hover:bg-warm-light/50 transition-colors p-6"
               >
-                <h3 className="font-display font-medium text-[1.25rem] leading-[1.3] text-ink">
+                <h3 className="font-display font-medium text-[1.5rem] leading-[1.25] text-ink">
                   Culture readiness diagnostic
                 </h3>
                 <p className="mt-3 text-ink-muted">

@@ -5,7 +5,7 @@ import Footer from '../components/Footer.jsx'
 
 const interTight = Inter_Tight({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['100', '400', '500', '600', '700'],
   style: ['normal', 'italic'],
   variable: '--font-inter-tight',
   display: 'swap',

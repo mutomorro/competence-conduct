@@ -19,7 +19,7 @@ export default function WhereToStart() {
   return (
     <SectionWrapper id="where-to-start">
       <div className="max-w-[56rem]">
-        <h2 className="font-display font-normal text-[1.75rem] md:text-[2.5rem] leading-[1.15] text-ink">
+        <h2 className="font-display font-normal text-[2rem] md:text-[3rem] leading-[1.1] text-ink">
           Where to start
         </h2>
         <p className="mt-5 max-w-[42rem]">

@@ -6,7 +6,7 @@ export default function WelcomeScreen({ onStart }) {
       <p className="font-body text-xs uppercase tracking-[0.05em] font-medium text-purple-accent">
         Culture readiness diagnostic
       </p>
-      <h1 className="mt-3 font-display font-normal text-[2.25rem] md:text-[3rem] leading-[1.1] tracking-tight text-ink">
+      <h1 className="mt-3 font-display font-normal text-[2.75rem] md:text-[3.625rem] leading-[1.05] tracking-tight text-ink">
         How ready is your organisation?
       </h1>
 
