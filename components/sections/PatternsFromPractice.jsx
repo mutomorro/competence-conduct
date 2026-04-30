@@ -1,4 +1,4 @@
-import SectionWrapper from '../components/SectionWrapper.jsx'
+import SectionWrapper from '../SectionWrapper.jsx'
 
 export default function PatternsFromPractice() {
   return (

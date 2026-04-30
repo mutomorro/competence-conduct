@@ -1,4 +1,4 @@
-import SectionWrapper from '../components/SectionWrapper.jsx'
+import SectionWrapper from '../SectionWrapper.jsx'
 
 export default function Diagnostic() {
   return (
@@ -16,8 +16,8 @@ export default function Diagnostic() {
         </p>
         <p className="mt-3 text-base">
           Twenty questions across the five areas, scored to produce a clear
-          picture of strengths and gaps. You'll be able to take it on screen or
-          export as a PDF for your board pack.
+          picture of strengths and gaps. You&apos;ll be able to take it on
+          screen or export as a PDF for your board pack.
         </p>
       </div>
     </SectionWrapper>

@@ -1,4 +1,4 @@
-import SectionWrapper from '../components/SectionWrapper.jsx'
+import SectionWrapper from '../SectionWrapper.jsx'
 
 const questions = [
   'What does competence mean for the work we actually do?',

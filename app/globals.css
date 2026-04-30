@@ -23,10 +23,12 @@
   --color-dim-5: #7a5b5b;
   --color-dim-6: #5b7a5f;
 
-  --font-display: "Instrument Serif", Georgia, serif;
-  --font-body: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
-
   --content-max: 42rem;
+}
+
+@theme inline {
+  --font-display: var(--font-instrument-serif), Georgia, serif;
+  --font-body: var(--font-source-sans), "Source Sans Pro", system-ui, sans-serif;
 }
 
 html {
@@ -36,7 +38,6 @@ html {
 }
 
 body {
-  margin: 0;
   font-family: var(--font-body);
   color: var(--color-stone-800);
   background-color: var(--color-stone-50);
