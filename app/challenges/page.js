@@ -366,7 +366,7 @@ export default function ChallengesPage() {
           <p className="text-xs uppercase tracking-[0.05em] font-medium text-purple-accent mb-2">
             Challenges
           </p>
-          <h1 className="font-display font-bold text-[2.5rem] md:text-[3.5rem] leading-[1.05] tracking-tight text-ink">
+          <h1 className="font-display font-medium text-[2.25rem] md:text-[3rem] leading-[1.05] tracking-tight text-ink">
             Six culture challenges in the Competence and Conduct Standard
           </h1>
 
@@ -452,9 +452,9 @@ export default function ChallengesPage() {
             <div className="mt-8 grid gap-6 md:grid-cols-2">
               <Link
                 href="/questions"
-                className="group block bg-warm-light border-l-[3px] border-purple-accent hover:bg-warm-light/70 transition-colors p-6"
+                className="group block bg-white border-l-[3px] border-purple-accent hover:bg-warm-light/50 transition-colors p-6"
               >
-                <h3 className="font-display font-semibold text-[1.25rem] leading-[1.3] text-ink">
+                <h3 className="font-display font-medium text-[1.25rem] leading-[1.3] text-ink">
                   Five culture questions
                 </h3>
                 <p className="mt-3 text-ink-muted">
@@ -468,9 +468,9 @@ export default function ChallengesPage() {
               </Link>
               <Link
                 href="/diagnostic"
-                className="group block bg-warm-light border-l-[3px] border-purple-accent hover:bg-warm-light/70 transition-colors p-6"
+                className="group block bg-white border-l-[3px] border-purple-accent hover:bg-warm-light/50 transition-colors p-6"
               >
-                <h3 className="font-display font-semibold text-[1.25rem] leading-[1.3] text-ink">
+                <h3 className="font-display font-medium text-[1.25rem] leading-[1.3] text-ink">
                   Culture readiness diagnostic
                 </h3>
                 <p className="mt-3 text-ink-muted">

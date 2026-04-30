@@ -35,7 +35,7 @@ html {
 body {
   font-family: var(--font-body);
   color: var(--color-ink);
-  background-color: #ffffff;
+  background-color: var(--color-warm-light);
   line-height: 1.7;
   font-size: 1.0625rem; /* 17px - body per design system */
 }

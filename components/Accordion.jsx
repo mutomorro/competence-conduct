@@ -28,7 +28,7 @@ export default function Accordion({ title, defaultOpen = false, children }) {
         aria-expanded={open}
         aria-controls={contentId}
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-4 bg-warm-light hover:bg-warm-light/70 transition-colors px-5 py-4 text-left"
+        className="w-full flex items-center justify-between gap-4 bg-white hover:bg-warm-light/50 transition-colors px-5 py-4 text-left"
       >
         <span className="text-xl font-medium text-ink leading-[1.4]">
           {title}

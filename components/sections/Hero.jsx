@@ -4,7 +4,7 @@ export default function Hero() {
       <p className="text-xs uppercase tracking-[0.05em] font-medium text-purple-accent mb-2">
         Beyond Qualifications
       </p>
-      <h1 className="font-display font-bold text-[3rem] md:text-[4.5rem] lg:text-[5.5rem] leading-[1.05] tracking-tight text-ink max-w-[64rem]">
+      <h1 className="font-display font-medium text-[2.75rem] md:text-[4rem] lg:text-[5rem] leading-[1.05] tracking-tight text-ink max-w-[64rem]">
         The Competence and Conduct Standard: a guide to the culture change
         requirements
       </h1>
