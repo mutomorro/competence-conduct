@@ -72,7 +72,6 @@ export default function VennField({
                 animationDelay: `${(-d.phase * duration).toFixed(2)}s`,
                 animationIterationCount: 'infinite',
                 animationDirection: 'alternate',
-                transformOrigin: `${d.cx}px ${d.cy}px`,
               }
             : {}
           return (
@@ -80,10 +79,11 @@ export default function VennField({
               key={d.key}
               transform={`translate(${d.cx} ${d.cy}) rotate(${d.rot})`}
               opacity={opacity}
-              style={animStyle}
             >
-              <circle cx={-dx} cy={0} r={r} fill={indigo} />
-              <circle cx={dx} cy={0} r={r} fill={violet} />
+              <g style={animStyle}>
+                <circle cx={-dx} cy={0} r={r} fill={indigo} />
+                <circle cx={dx} cy={0} r={r} fill={violet} />
+              </g>
             </g>
           )
         })}
