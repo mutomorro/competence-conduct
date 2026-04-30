@@ -68,17 +68,32 @@ export default function Home() {
     <>
       {/* Section 1 — Hero */}
       <section className="relative overflow-hidden">
-        <VennField
-          className="absolute inset-0"
-          density={12}
-          opacity={0.1}
-          animated
-        />
-        <div className="relative z-10 max-w-[84rem] mx-auto px-6 pt-20 pb-24 md:pt-28 md:pb-32">
+        {/* Atmospheric VennField — lg+, bleeds off right edge, masked away from text */}
+        <div
+          className="hidden lg:block absolute inset-y-0 pointer-events-none"
+          style={{
+            right: '-12%',
+            width: '70%',
+            maskImage:
+              'linear-gradient(to right, transparent 0%, transparent 35%, rgba(0,0,0,0.35) 65%, black 92%)',
+            WebkitMaskImage:
+              'linear-gradient(to right, transparent 0%, transparent 35%, rgba(0,0,0,0.35) 65%, black 92%)',
+          }}
+          aria-hidden="true"
+        >
+          <VennField
+            className="absolute inset-0"
+            density={30}
+            opacity={0.38}
+            animated
+          />
+        </div>
+
+        <div className="relative max-w-[84rem] mx-auto px-6 pt-20 pb-24 md:pt-28 md:pb-32">
           <p className="font-body text-[12px] uppercase tracking-[0.05em] font-medium text-purple-accent mb-3">
             Beyond Qualifications
           </p>
-          <h1 className="font-display font-normal text-[2.75rem] md:text-[4rem] lg:text-[5rem] leading-[1.05] tracking-tight text-ink max-w-[64rem]">
+          <h1 className="font-display font-normal text-[2.75rem] md:text-[4rem] lg:text-[5rem] leading-[1.05] tracking-tight text-ink max-w-[52rem]">
             The Competence and Conduct Standard
           </h1>
           <p className="mt-5 font-display font-normal text-[1.5rem] md:text-[1.75rem] leading-[1.25] text-ink-muted max-w-[56rem]">
