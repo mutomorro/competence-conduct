@@ -40,11 +40,11 @@ export default function Nav() {
               aria-hidden="true"
               className="shrink-0 mt-0.5"
             />
-            <span className="flex flex-col" style={{ gap: '2px' }}>
-              <span className="font-display text-[16px] font-medium text-ink tracking-tight leading-none group-hover:text-purple-accent transition-colors">
+            <span className="flex flex-col" style={{ gap: '4px' }}>
+              <span className="font-display text-[22px] font-medium text-ink tracking-tight leading-none group-hover:text-purple-accent transition-colors">
                 Competence <em>&amp;</em> Conduct
               </span>
-              <span className="font-body text-[12px] font-normal text-ink-muted leading-none">
+              <span className="font-body text-[13px] font-normal text-ink-muted leading-none">
                 Culture readiness guide for housing leaders
               </span>
             </span>
