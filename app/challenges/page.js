@@ -95,7 +95,7 @@ const challenges = [
   {
     id: 'challenge-2',
     title:
-      'Defining professional behaviours when the Regulator won’t do it for you',
+      'Defining professional behaviours when the Regulator won’t provide definitive guidelines',
     short: 'Defining professional behaviours',
     requires: (
       <p className="mt-2">
@@ -318,7 +318,7 @@ const challenges = [
   },
   {
     id: 'challenge-6',
-    title: 'Making this a cross-functional priority - not just an HR project',
+    title: 'Making this a cross-functional priority - not isolated to HR functions',
     short: 'A cross-functional priority',
     requires: (
       <p className="mt-2">
