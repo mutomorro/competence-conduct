@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import SectionWrapper from '../../components/SectionWrapper.jsx'
+import TableOfContents from '../../components/editorial/TableOfContents.jsx'
 
 export const metadata = {
   title: 'Five culture questions for housing leadership teams',
@@ -32,8 +32,10 @@ function ExtLink({ href, children }) {
 
 const questions = [
   {
+    id: 'question-1',
     title:
       'Can your front-line teams describe the behaviours expected of them - in their own words?',
+    short: 'Can teams describe expected behaviours?',
     body: (
       <>
         <p className="mt-4">
@@ -61,8 +63,10 @@ const questions = [
     ),
   },
   {
+    id: 'question-2',
     title:
       'Are your managers equipped to lead culture - or just manage performance?',
+    short: 'Managers leading culture, not just performance',
     body: (
       <>
         <p className="mt-4">
@@ -93,8 +97,10 @@ const questions = [
     ),
   },
   {
+    id: 'question-3',
     title:
       'Have residents genuinely shaped your code of conduct - or been consulted after the fact?',
+    short: 'Residents shaping the code, not consulted on it',
     body: (
       <>
         <p className="mt-4">
@@ -129,8 +135,10 @@ const questions = [
     ),
   },
   {
+    id: 'question-4',
     title:
       'Does your learning and development connect to culture outcomes - or just knowledge transfer?',
+    short: 'L&D linked to culture outcomes',
     body: (
       <>
         <p className="mt-4">
@@ -166,8 +174,10 @@ const questions = [
     ),
   },
   {
+    id: 'question-5',
     title:
       'When someone isn’t meeting behavioural expectations, what happens - honestly?',
+    short: 'Addressing conduct that falls short',
     body: (
       <>
         <p className="mt-4">
@@ -201,105 +211,137 @@ const questions = [
   },
 ]
 
-export default function QuestionsPage() {
+const tocItems = questions.map((q) => ({ id: q.id, title: q.short }))
+
+const bandInner = 'max-w-[84rem] mx-auto px-6 lg:pr-[18rem] py-16 md:py-20'
+
+function QuestionBand({ question, index, bg }) {
   return (
-    <article>
-      <SectionWrapper id="top">
-        <div className="max-w-[56rem]">
-          <p className="text-xs uppercase tracking-[0.05em] font-medium text-purple-accent mb-2">
-            Key Questions
-          </p>
-          <h1 className="font-display font-normal text-[2.75rem] md:text-[3.625rem] leading-[1.05] tracking-tight text-ink">
-            Five culture questions for housing leadership teams
-          </h1>
-
-          <div className="mt-8 space-y-5 max-w-[42rem]">
-            <p>
-              The{' '}
-              <ExtLink href="https://www.gov.uk/government/consultations/competence-and-conduct-standard-for-social-housing-consultation/outcome/competence-and-conduct-standard-for-social-housing-government-response">
-                Competence and Conduct Standard
-              </ExtLink>{' '}
-              places culture and behaviour change at the centre of what
-              providers must evidence from October 2026. But unlike the
-              qualification requirements, there is no prescribed curriculum
-              or course list. Each organisation must define, embed, and
-              evidence its own approach.
-            </p>
-            <p>
-              These five questions are designed for housing leadership teams
-              to work through together - not as a compliance exercise, but
-              as an honest assessment of where your organisation stands on
-              the culture side of the standard. Each question connects to a
-              specific requirement and surfaces the gap between what policy
-              documents say and what staff and residents experience day to
-              day.
-            </p>
-            <p>
-              They take about 15 minutes each. The disagreements they
-              surface are usually more valuable than the agreements.
-            </p>
-          </div>
-
-          <ol className="mt-12 space-y-12">
-            {questions.map((q, i) => (
-              <li key={i}>
-                <div className="flex gap-5">
-                  <span className="font-display font-normal text-4xl md:text-5xl text-purple-accent leading-none shrink-0">
-                    {i + 1}
-                  </span>
-                  <div>
-                    <h3 className="text-xl font-semibold text-ink leading-[1.4]">
-                      {q.title}
-                    </h3>
-                    <div className="max-w-[42rem]">{q.body}</div>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ol>
-
-          <div className="mt-16 border-t border-warm-mid pt-10">
-            <p className="max-w-[42rem]">
-              Explored the questions? See where your organisation stands
-              across six culture dimensions of the standard.
-            </p>
-
-            <div className="mt-8 grid gap-6 md:grid-cols-2">
-              <Link
-                href="/diagnostic"
-                className="group block bg-white border-l-[3px] border-purple-accent hover:bg-warm-light/50 transition-colors p-6"
-              >
-                <h3 className="font-display font-medium text-[1.5rem] leading-[1.25] text-ink">
-                  Culture readiness diagnostic
-                </h3>
-                <p className="mt-3 text-ink-muted">
-                  A structured self-assessment that helps your leadership
-                  team identify where the gaps are - and where you disagree
-                  most.
-                </p>
-                <p className="mt-4 text-purple-accent font-medium">
-                  Take the diagnostic →
-                </p>
-              </Link>
-              <Link
-                href="/challenges"
-                className="group block bg-white border-l-[3px] border-purple-accent hover:bg-warm-light/50 transition-colors p-6"
-              >
-                <h3 className="font-display font-medium text-[1.5rem] leading-[1.25] text-ink">
-                  Six culture challenges
-                </h3>
-                <p className="mt-3 text-ink-muted">
-                  The practical difficulties providers are navigating as
-                  they prepare for October 2026.
-                </p>
-                <p className="mt-4 text-purple-accent font-medium">
-                  Read the challenges →
-                </p>
-              </Link>
+    <section className={`w-full ${bg}`}>
+      <div className={bandInner}>
+        <div id={question.id} className="scroll-mt-24 max-w-[56rem]">
+          <div className="flex gap-5">
+            <span className="font-display font-normal text-4xl md:text-5xl text-purple-accent leading-none shrink-0">
+              {index + 1}
+            </span>
+            <div>
+              <h2 className="text-xl font-semibold text-ink leading-[1.4]">
+                {question.title}
+              </h2>
+              <div className="max-w-[42rem]">{question.body}</div>
             </div>
           </div>
         </div>
-      </SectionWrapper>
+      </div>
+    </section>
+  )
+}
+
+export default function QuestionsPage() {
+  return (
+    <article className="relative" id="top">
+      {/* Band 1 — Page header */}
+      <section className="w-full bg-warm-light">
+        <div className={bandInner}>
+          <div className="max-w-[56rem]">
+            <p className="text-xs uppercase tracking-[0.05em] font-medium text-purple-accent mb-2">
+              Key Questions
+            </p>
+            <h1 className="font-display font-normal text-[2.75rem] md:text-[3.625rem] leading-[1.05] tracking-tight text-ink">
+              Five culture questions for housing leadership teams
+            </h1>
+
+            <div className="mt-8 space-y-5 max-w-[42rem]">
+              <p>
+                The{' '}
+                <ExtLink href="https://www.gov.uk/government/consultations/competence-and-conduct-standard-for-social-housing-consultation/outcome/competence-and-conduct-standard-for-social-housing-government-response">
+                  Competence and Conduct Standard
+                </ExtLink>{' '}
+                places culture and behaviour change at the centre of what
+                providers must evidence from October 2026. But unlike the
+                qualification requirements, there is no prescribed curriculum
+                or course list. Each organisation must define, embed, and
+                evidence its own approach.
+              </p>
+              <p>
+                These five questions are designed for housing leadership teams
+                to work through together - not as a compliance exercise, but
+                as an honest assessment of where your organisation stands on
+                the culture side of the standard. Each question connects to a
+                specific requirement and surfaces the gap between what policy
+                documents say and what staff and residents experience day to
+                day.
+              </p>
+              <p>
+                They take about 15 minutes each. The disagreements they
+                surface are usually more valuable than the agreements.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bands 2–6 — Five questions, alternating */}
+      {questions.map((q, i) => (
+        <QuestionBand
+          key={q.id}
+          question={q}
+          index={i}
+          bg={i % 2 === 0 ? 'bg-white' : 'bg-warm-light'}
+        />
+      ))}
+
+      {/* Band 7 — Closing cross-links */}
+      <section className="w-full bg-warm-light">
+        <div className={bandInner}>
+          <p className="max-w-[42rem]">
+            Explored the questions? See where your organisation stands across
+            six culture dimensions of the standard.
+          </p>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2 max-w-[56rem]">
+            <Link
+              href="/diagnostic"
+              className="group block bg-white border-l-[3px] border-purple-accent hover:bg-warm-light/50 transition-colors p-6"
+            >
+              <h3 className="font-display font-medium text-[1.5rem] leading-[1.25] text-ink">
+                Culture readiness diagnostic
+              </h3>
+              <p className="mt-3 text-ink-muted">
+                A structured self-assessment that helps your leadership team
+                identify where the gaps are - and where you disagree most.
+              </p>
+              <p className="mt-4 text-purple-accent font-medium">
+                Take the diagnostic →
+              </p>
+            </Link>
+            <Link
+              href="/challenges"
+              className="group block bg-white border-l-[3px] border-purple-accent hover:bg-warm-light/50 transition-colors p-6"
+            >
+              <h3 className="font-display font-medium text-[1.5rem] leading-[1.25] text-ink">
+                Six culture challenges
+              </h3>
+              <p className="mt-3 text-ink-muted">
+                The practical difficulties providers are navigating as they
+                prepare for October 2026.
+              </p>
+              <p className="mt-4 text-purple-accent font-medium">
+                Read the challenges →
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Sticky TOC overlay (lg+ only) */}
+      <div className="hidden lg:block absolute inset-0 pointer-events-none">
+        <div className="max-w-[84rem] mx-auto px-6 h-full relative">
+          <aside className="absolute top-0 right-6 w-[15rem] h-full pointer-events-auto">
+            <TableOfContents items={tocItems} />
+          </aside>
+        </div>
+      </div>
     </article>
   )
 }
