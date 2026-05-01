@@ -1,8 +1,10 @@
 'use client'
 
+import PDFDownloadButton from '../pdf/PDFDownloadButton'
+
 export default function ResultsHeader({
   completedDate,
-  onPrint,
+  responses,
   onEmail,
   emailOpen,
   emailValue,
@@ -49,13 +51,10 @@ export default function ResultsHeader({
               Email delivery coming soon
             </p>
           ) : (
-            <button
-              type="button"
-              onClick={onPrint}
-              className="font-body text-[14px] font-medium text-white border border-white/40 rounded-full px-5 py-2.5 hover:bg-white hover:text-ink hover:border-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
-            >
-              Download as PDF
-            </button>
+            <PDFDownloadButton
+              responses={responses}
+              className="font-body text-[14px] font-medium text-white border border-white/40 rounded-full px-5 py-2.5 hover:bg-white hover:text-ink hover:border-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 disabled:opacity-70 disabled:cursor-not-allowed"
+            />
           )}
 
           {!emailOpen ? (

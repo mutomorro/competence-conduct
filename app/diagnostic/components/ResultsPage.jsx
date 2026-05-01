@@ -52,10 +52,6 @@ export default function ResultsPage({ responses, onRestart }) {
 
   const completedDate = formatDate()
 
-  function handlePrint() {
-    if (typeof window !== 'undefined') window.print()
-  }
-
   function handleEmailSubmit(e) {
     e.preventDefault()
     setEmailSubmitted(true)
@@ -65,7 +61,7 @@ export default function ResultsPage({ responses, onRestart }) {
     <div className="diagnostic-results">
       <ResultsHeader
         completedDate={completedDate}
-        onPrint={handlePrint}
+        responses={responses}
         onEmail={() => setEmailOpen(true)}
         emailOpen={emailOpen}
         emailValue={emailValue}
