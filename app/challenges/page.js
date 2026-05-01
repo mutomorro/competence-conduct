@@ -118,11 +118,12 @@ const challenges = [
           difficult piece of work.
         </p>
         <p className="mt-3">
-          Many providers have existing values statements and codes of conduct.
-          But there&apos;s a difference between a values poster in the break
-          room and a set of behavioural expectations that staff can describe in
-          their own words, that managers feel confident holding people to, and
-          that residents would recognise in their day-to-day experience.
+          Many providers have values statements and codes of conduct that
+          have been carefully developed. The question the standard raises is
+          whether those expectations have moved beyond documentation into
+          something staff can describe in their own words, that managers feel
+          confident holding people to, and that residents would recognise in
+          their day-to-day experience.
         </p>
         <p className="mt-3">
           The temptation is to adopt a generic framework. The risk is that a
@@ -135,12 +136,12 @@ const challenges = [
     ),
     startingPoint: (
       <p className="mt-2">
-        Test what you already have. Ask five front-line colleagues to describe
+        Test what you already have. Ask five resident-facing colleagues to describe
         the behaviours expected of them - without looking anything up. If the
-        answers are consistent and sound like real life rather than a policy
-        document, your code is embedded. If the answers vary widely or sound
-        rehearsed, the standard will surface that gap. Start there before
-        investing in new frameworks.
+        answers are consistent and grounded in real experience, that&apos;s a
+        strong foundation to build on. If they vary widely, that&apos;s
+        useful information about where to focus. Start there before investing
+        in new frameworks.
       </p>
     ),
   },
@@ -176,11 +177,11 @@ const challenges = [
           distinction that matters: influence is not the same as consultation.
         </p>
         <p className="mt-3">
-          Consultation typically asks residents to respond to something that
-          has already been designed. Influence asks residents to shape the
-          thing being designed, from the start. It means involving residents in
-          defining what good conduct looks like, not reviewing a finished code
-          of conduct.
+          Consultation can range from reviewing a finished document to
+          shaping something from the beginning. The standard is explicit
+          that it expects residents to have shaped the code of conduct - not
+          just reviewed it. It means involving residents in defining what
+          good conduct looks like, not reviewing a finished code of conduct.
         </p>
         <p className="mt-3">
           This is unfamiliar territory for many providers. It requires a
@@ -194,12 +195,14 @@ const challenges = [
     startingPoint: (
       <p className="mt-2">
         Review how your current code of conduct was developed. If residents
-        were involved, at what stage? If they reviewed a draft, that&apos;s
-        consultation. If their lived experience shaped the content before it
-        was drafted, that&apos;s influence. The standard requires the latter.
-        If there&apos;s a gap, the good news is that residents are usually
-        willing to contribute to this work - the question is whether
-        they&apos;re invited early enough to make a real difference.
+        were involved, at what stage? The earlier residents are part of the
+        conversation, the closer the process sits to what the standard
+        describes as meaningful influence. Reviewing a finished document and
+        shaping one from the start are different things - the standard is
+        clear about which it expects. If there&apos;s a gap, the good news
+        is that residents are usually willing to contribute to this work -
+        the question is whether they&apos;re invited early enough to make a
+        real difference.
       </p>
     ),
   },
@@ -226,9 +229,10 @@ const challenges = [
           </ExtLink>{' '}
           explicitly states it aims to &quot;drive the culture change necessary
           to eradicate unprofessional attitudes and stigma.&quot; But culture
-          change is hard to systematise, and the natural instinct in a
-          regulated sector is to turn requirements into processes, policies,
-          and checklists.
+          change is hard to systematise. In a regulated sector, the logical
+          starting point is to turn requirements into processes, policies,
+          and frameworks. That&apos;s a reasonable response - but the
+          standard asks for something beyond it.
         </p>
         <p className="mt-3">
           The risk is that providers build an impressive compliance
@@ -349,12 +353,12 @@ const challenges = [
           assure the Regulator requires governance input.
         </p>
         <p className="mt-3">
-          When the work sits solely with HR, it tends to produce excellent
-          policies and training programmes. What it often doesn&apos;t produce
-          is the cross-functional alignment needed for culture to shift at the
-          level the standard demands. The gap isn&apos;t capability - most HR
-          and L&amp;D teams are highly capable. The gap is mandate, resourcing,
-          and organisational buy-in.
+          When the work sits solely with HR, it tends to produce strong
+          policies and well-designed training programmes - but
+          cross-functional culture change requires more than one function can
+          deliver alone, regardless of how capable that function is. The gap
+          isn&apos;t capability - most HR and L&amp;D teams are highly
+          capable. The gap is mandate, resourcing, and organisational buy-in.
         </p>
       </>
     ),
