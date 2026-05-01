@@ -1,6 +1,4 @@
 import Link from 'next/link'
-import SectionWrapper from '../../components/SectionWrapper.jsx'
-import SectionDivider from '../../components/editorial/SectionDivider.jsx'
 
 export const metadata = {
   title:
@@ -70,28 +68,36 @@ const closingCards = [
   },
 ]
 
+const bandInner = 'max-w-[84rem] mx-auto px-6 py-16 md:py-20'
+
 export default function AboutPage() {
   return (
-    <article>
-      <SectionWrapper id="top">
-        <div className="max-w-[56rem]">
-          {/* Page header */}
-          <p className="font-body text-[12px] uppercase tracking-[0.05em] font-medium text-purple-accent mb-2">
-            About
-          </p>
-          <h1 className="font-display font-normal text-[2.25rem] md:text-[3rem] leading-[1.05] tracking-tight text-ink">
-            About this site
-          </h1>
+    <article id="top">
+      {/* Band 1 — Page header */}
+      <section className="w-full bg-warm-light">
+        <div className={bandInner}>
+          <div className="max-w-[56rem]">
+            <p className="font-body text-[12px] uppercase tracking-[0.05em] font-medium text-purple-accent mb-2">
+              About
+            </p>
+            <h1 className="font-display font-normal text-[2.25rem] md:text-[3rem] leading-[1.05] tracking-tight text-ink">
+              About this site
+            </h1>
 
-          <p className="mt-8 font-body text-[17px] leading-[1.7] text-ink max-w-[42rem]">
-            A suite of practical resources for housing leaders preparing for
-            the culture and behaviour requirements of the Competence and
-            Conduct Standard. Analysis, frameworks, and tools designed to be
-            picked up and used with your teams.
-          </p>
+            <p className="mt-8 font-body text-[17px] leading-[1.7] text-ink max-w-[42rem]">
+              A suite of practical resources for housing leaders preparing
+              for the culture and behaviour requirements of the Competence
+              and Conduct Standard. Analysis, frameworks, and tools designed
+              to be picked up and used with your teams.
+            </p>
+          </div>
+        </div>
+      </section>
 
-          {/* Section 1 — Why this exists */}
-          <section className="mt-16">
+      {/* Band 2 — Why this exists */}
+      <section className="w-full bg-white">
+        <div className={bandInner}>
+          <div className="max-w-[56rem]">
             <h2 className="font-display font-normal text-[1.5rem] md:text-[2rem] leading-[1.2] text-ink">
               Why this exists
             </h2>
@@ -128,12 +134,14 @@ export default function AboutPage() {
                 staff know.
               </p>
             </div>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          <SectionDivider />
-
-          {/* Section 2 — Who this is for */}
-          <section>
+      {/* Band 3 — Who this is for */}
+      <section className="w-full bg-warm-light">
+        <div className={bandInner}>
+          <div className="max-w-[56rem]">
             <h2 className="font-display font-normal text-[1.5rem] md:text-[2rem] leading-[1.2] text-ink">
               Who this is for
             </h2>
@@ -159,12 +167,14 @@ export default function AboutPage() {
                 qualification framework.
               </p>
             </div>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          <SectionDivider />
-
-          {/* Section 3 — What's on this site */}
-          <section>
+      {/* Band 4 — What's on this site */}
+      <section className="w-full bg-white">
+        <div className={bandInner}>
+          <div className="max-w-[56rem]">
             <h2 className="font-display font-normal text-[1.5rem] md:text-[2rem] leading-[1.2] text-ink">
               What&apos;s on this site
             </h2>
@@ -190,12 +200,12 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="mt-6 grid gap-4 md:grid-cols-3 max-w-[56rem]">
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
               {toolCards.map((c) => (
                 <Link
                   key={c.href}
                   href={c.href}
-                  className="group block bg-white border-l-[3px] border-purple-accent hover:bg-warm-light/50 transition-colors p-5"
+                  className="group block bg-warm-light border-l-[3px] border-purple-accent hover:bg-warm-light/70 transition-colors p-5"
                 >
                   <h3 className="font-display font-medium text-[20px] leading-[1.25] text-ink">
                     {c.title}
@@ -213,12 +223,14 @@ export default function AboutPage() {
               challenge frameworks, and the questions are all built to
               support real conversations in real leadership settings.
             </p>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          <SectionDivider />
-
-          {/* Section 4 — Who built this */}
-          <section>
+      {/* Band 5 — Who built this */}
+      <section className="w-full bg-warm-light">
+        <div className={bandInner}>
+          <div className="max-w-[56rem]">
             <h2 className="font-display font-normal text-[1.5rem] md:text-[2rem] leading-[1.2] text-ink">
               Who built this
             </h2>
@@ -246,12 +258,14 @@ export default function AboutPage() {
                 <ExtLink href="https://mutomorro.com">mutomorro.com</ExtLink>.
               </p>
             </div>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          <SectionDivider />
-
-          {/* Section 5 — How this content was developed */}
-          <section>
+      {/* Band 6 — How this content was developed */}
+      <section className="w-full bg-white">
+        <div className={bandInner}>
+          <div className="max-w-[56rem]">
             <h2 className="font-display font-normal text-[1.5rem] md:text-[2rem] leading-[1.2] text-ink">
               How this content was developed
             </h2>
@@ -303,26 +317,29 @@ export default function AboutPage() {
                 regulatory or professional body.
               </p>
             </div>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          {/* Closing pull-out */}
-          <aside className="mt-16 border-l-[3px] border-warm-mid pl-6 max-w-[42rem]">
-            <p className="font-display italic text-[18px] font-medium text-ink leading-[1.5]">
-              The Competence and Conduct Standard is an opportunity to take
-              the culture work that many housing organisations have been
-              doing for years and give it the structure, evidence, and
-              visibility it deserves. This site is here to help with that.
-            </p>
-          </aside>
+      {/* Band 7 — Closing pull-out + cross-link cards */}
+      <section className="w-full bg-warm-light">
+        <div className={bandInner}>
+          <div className="max-w-[56rem]">
+            <aside className="border-l-[3px] border-warm-mid pl-6 max-w-[42rem]">
+              <p className="font-display italic text-[18px] font-medium text-ink leading-[1.5]">
+                The Competence and Conduct Standard is an opportunity to take
+                the culture work that many housing organisations have been
+                doing for years and give it the structure, evidence, and
+                visibility it deserves. This site is here to help with that.
+              </p>
+            </aside>
 
-          {/* Cross-link cards */}
-          <div className="mt-16 border-t border-warm-mid pt-10">
-            <div className="grid gap-6 md:grid-cols-2 max-w-[56rem]">
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
               {closingCards.map((c) => (
                 <Link
                   key={c.href}
                   href={c.href}
-                  className="group block bg-white border-l-[3px] border-purple-accent hover:bg-warm-light/50 transition-colors p-6"
+                  className="group block bg-white border-l-[3px] border-purple-accent hover:bg-white/80 transition-colors p-6"
                 >
                   <h3 className="font-display font-medium text-[20px] leading-[1.25] text-ink">
                     {c.title}
@@ -338,7 +355,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </SectionWrapper>
+      </section>
     </article>
   )
 }
