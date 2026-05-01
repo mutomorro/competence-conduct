@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import SectionWrapper from '../../components/SectionWrapper.jsx'
+import TableOfContents from '../../components/editorial/TableOfContents.jsx'
 
 export const metadata = {
   title: 'Six culture challenges in the Competence and Conduct Standard',
@@ -40,7 +40,9 @@ function SubLabel({ children }) {
 
 const challenges = [
   {
+    id: 'challenge-1',
     title: 'Evidencing culture change - not just training delivery',
+    short: 'Evidencing culture change',
     requires: (
       <p className="mt-2">
         Providers must show that staff development translates into outcomes -
@@ -91,8 +93,10 @@ const challenges = [
     ),
   },
   {
+    id: 'challenge-2',
     title:
       'Defining professional behaviours when the Regulator won’t do it for you',
+    short: 'Defining professional behaviours',
     requires: (
       <p className="mt-2">
         Providers must ensure that all relevant staff have the right behaviours
@@ -141,7 +145,9 @@ const challenges = [
     ),
   },
   {
+    id: 'challenge-3',
     title: 'Giving residents genuine influence over your code of conduct',
+    short: 'Giving residents genuine influence',
     requires: (
       <p className="mt-2">
         Providers must give tenants{' '}
@@ -198,7 +204,9 @@ const challenges = [
     ),
   },
   {
+    id: 'challenge-4',
     title: 'The risk of treating culture change as a compliance exercise',
+    short: 'Avoiding the compliance trap',
     requires: (
       <p className="mt-2">
         The Competence and Conduct Standard is outcome-based and assurance-led.
@@ -254,8 +262,10 @@ const challenges = [
     ),
   },
   {
+    id: 'challenge-5',
     title:
       'Culture change takes years - but the requirements start in October 2026',
+    short: 'Culture change vs the deadline',
     requires: (
       <p className="mt-2">
         The qualification requirements have a transition period - three years
@@ -303,7 +313,9 @@ const challenges = [
     ),
   },
   {
+    id: 'challenge-6',
     title: 'Making this a cross-functional priority - not just an HR project',
+    short: 'A cross-functional priority',
     requires: (
       <p className="mt-2">
         The{' '}
@@ -359,133 +371,163 @@ const challenges = [
   },
 ]
 
-export default function ChallengesPage() {
-  return (
-    <article>
-      <SectionWrapper id="top">
-        <div className="max-w-[56rem]">
-          <p className="text-xs uppercase tracking-[0.05em] font-medium text-purple-accent mb-2">
-            Challenges
-          </p>
-          <h1 className="font-display font-normal text-[2.75rem] md:text-[3.625rem] leading-[1.05] tracking-tight text-ink">
-            Six culture challenges in the Competence and Conduct Standard
-          </h1>
+const tocItems = challenges.map((c) => ({ id: c.id, title: c.short }))
 
-          <div className="mt-8 space-y-5 max-w-[42rem]">
-            <p>
-              The qualification requirements in the Competence and Conduct
-              Standard have a defined path - Level 4 for senior housing
-              managers, Level 5 for senior housing executives, transition
-              periods of three to four years, CIH and others offering the
-              courses. Challenging, but structured.
-            </p>
-            <p>
-              The culture and behaviour requirements are deliberately less
-              prescribed. The{' '}
-              <ExtLink href="https://www.gov.uk/government/news/rsh-launches-consultation-on-updates-to-consumer-standards-and-requirements">
-                Regulator of Social Housing
-              </ExtLink>{' '}
-              won&apos;t provide a single framework of key skills and
-              behaviours. It will ask each provider to define what competence
-              and conduct looks like, embed it across the organisation, and
-              evidence that it&apos;s working.
-            </p>
-            <p>
-              These are six challenges that housing providers are navigating
-              as they prepare for October 2026. Each one is grounded in what
-              the standard specifically requires, and each one is an area
-              where the gap between policy and practice tends to be wider
-              than it first appears.
-            </p>
+const bandInner = 'max-w-[84rem] mx-auto px-6 lg:pr-[18rem] py-16 md:py-20'
+
+function ChallengeBand({ challenge, index, bg }) {
+  return (
+    <section className={`w-full ${bg}`}>
+      <div className={bandInner}>
+        <div
+          id={challenge.id}
+          className="scroll-mt-24 max-w-[56rem]"
+        >
+          <div className="flex items-baseline gap-4">
+            <span className="font-display font-normal text-2xl text-purple-accent shrink-0">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+            <h2 className="text-xl font-semibold text-ink leading-[1.4]">
+              {challenge.title}
+            </h2>
           </div>
 
-          <ol className="mt-14">
-            {challenges.map((c, i) => (
-              <li
-                key={c.title}
-                id={`challenge-${i + 1}`}
-                className={`scroll-mt-24 ${
-                  i === 0 ? '' : 'mt-12 pt-12 border-t border-warm-mid'
-                }`}
-              >
-                <div className="flex items-baseline gap-4">
-                  <span className="font-display font-normal text-2xl text-purple-accent shrink-0">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <h3 className="text-xl font-semibold text-ink leading-[1.4]">
-                    {c.title}
-                  </h3>
-                </div>
-
-                <div className="mt-6 space-y-7 max-w-[42rem]">
-                  <div>
-                    <SubLabel>What the standard requires</SubLabel>
-                    {c.requires}
-                  </div>
-                  <div>
-                    <SubLabel>Why this is hard</SubLabel>
-                    {c.whyHard}
-                  </div>
-                  <div>
-                    <SubLabel>A starting point</SubLabel>
-                    {c.startingPoint}
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ol>
-
-          <div className="mt-16 border-t border-warm-mid pt-10">
-            <div className="max-w-[42rem] space-y-4">
-              <p>
-                These challenges aren&apos;t reasons for pessimism.
-                They&apos;re the areas where honest assessment now will save
-                significant difficulty later - both in meeting the standard
-                and in creating genuinely better outcomes for residents.
-              </p>
-              <p>
-                Two resources on this site are designed to help your
-                leadership team work through them:
-              </p>
+          <div className="mt-6 space-y-7 max-w-[42rem]">
+            <div>
+              <SubLabel>What the standard requires</SubLabel>
+              {challenge.requires}
             </div>
-
-            <div className="mt-8 grid gap-6 md:grid-cols-2">
-              <Link
-                href="/questions"
-                className="group block bg-white border-l-[3px] border-purple-accent hover:bg-warm-light/50 transition-colors p-6"
-              >
-                <h3 className="font-display font-medium text-[1.5rem] leading-[1.25] text-ink">
-                  Five culture questions
-                </h3>
-                <p className="mt-3 text-ink-muted">
-                  Reflective questions designed to surface the gap between
-                  policy and practice. Each one takes about 15 minutes of
-                  honest conversation.
-                </p>
-                <p className="mt-4 text-purple-accent font-medium">
-                  Explore the questions →
-                </p>
-              </Link>
-              <Link
-                href="/diagnostic"
-                className="group block bg-white border-l-[3px] border-purple-accent hover:bg-warm-light/50 transition-colors p-6"
-              >
-                <h3 className="font-display font-medium text-[1.5rem] leading-[1.25] text-ink">
-                  Culture readiness diagnostic
-                </h3>
-                <p className="mt-3 text-ink-muted">
-                  An interactive tool that helps your leadership team assess
-                  where your organisation stands across six culture
-                  dimensions of the standard.
-                </p>
-                <p className="mt-4 text-purple-accent font-medium">
-                  Take the diagnostic →
-                </p>
-              </Link>
+            <div>
+              <SubLabel>Why this is hard</SubLabel>
+              {challenge.whyHard}
+            </div>
+            <div>
+              <SubLabel>A starting point</SubLabel>
+              {challenge.startingPoint}
             </div>
           </div>
         </div>
-      </SectionWrapper>
+      </div>
+    </section>
+  )
+}
+
+export default function ChallengesPage() {
+  return (
+    <article className="relative" id="top">
+      {/* Band 1 — Page header */}
+      <section className="w-full bg-warm-light">
+        <div className={bandInner}>
+          <div className="max-w-[56rem]">
+            <p className="text-xs uppercase tracking-[0.05em] font-medium text-purple-accent mb-2">
+              Challenges
+            </p>
+            <h1 className="font-display font-normal text-[2.75rem] md:text-[3.625rem] leading-[1.05] tracking-tight text-ink">
+              Six culture challenges in the Competence and Conduct Standard
+            </h1>
+
+            <div className="mt-8 space-y-5 max-w-[42rem]">
+              <p>
+                The qualification requirements in the Competence and Conduct
+                Standard have a defined path - Level 4 for senior housing
+                managers, Level 5 for senior housing executives, transition
+                periods of three to four years, CIH and others offering the
+                courses. Challenging, but structured.
+              </p>
+              <p>
+                The culture and behaviour requirements are deliberately less
+                prescribed. The{' '}
+                <ExtLink href="https://www.gov.uk/government/news/rsh-launches-consultation-on-updates-to-consumer-standards-and-requirements">
+                  Regulator of Social Housing
+                </ExtLink>{' '}
+                won&apos;t provide a single framework of key skills and
+                behaviours. It will ask each provider to define what
+                competence and conduct looks like, embed it across the
+                organisation, and evidence that it&apos;s working.
+              </p>
+              <p>
+                These are six challenges that housing providers are
+                navigating as they prepare for October 2026. Each one is
+                grounded in what the standard specifically requires, and
+                each one is an area where the gap between policy and
+                practice tends to be wider than it first appears.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bands 2–7 — Six challenges, alternating */}
+      {challenges.map((c, i) => (
+        <ChallengeBand
+          key={c.id}
+          challenge={c}
+          index={i}
+          bg={i % 2 === 0 ? 'bg-white' : 'bg-warm-light'}
+        />
+      ))}
+
+      {/* Band 8 — Closing cross-links */}
+      <section className="w-full bg-white">
+        <div className={bandInner}>
+          <div className="max-w-[42rem] space-y-4">
+            <p>
+              These challenges aren&apos;t reasons for pessimism. They&apos;re
+              the areas where honest assessment now will save significant
+              difficulty later - both in meeting the standard and in creating
+              genuinely better outcomes for residents.
+            </p>
+            <p>
+              Two resources on this site are designed to help your leadership
+              team work through them:
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2 max-w-[56rem]">
+            <Link
+              href="/questions"
+              className="group block bg-warm-light border-l-[3px] border-purple-accent hover:bg-warm-light/70 transition-colors p-6"
+            >
+              <h3 className="font-display font-medium text-[1.5rem] leading-[1.25] text-ink">
+                Five culture questions
+              </h3>
+              <p className="mt-3 text-ink-muted">
+                Reflective questions designed to surface the gap between
+                policy and practice. Each one takes about 15 minutes of
+                honest conversation.
+              </p>
+              <p className="mt-4 text-purple-accent font-medium">
+                Explore the questions →
+              </p>
+            </Link>
+            <Link
+              href="/diagnostic"
+              className="group block bg-warm-light border-l-[3px] border-purple-accent hover:bg-warm-light/70 transition-colors p-6"
+            >
+              <h3 className="font-display font-medium text-[1.5rem] leading-[1.25] text-ink">
+                Culture readiness diagnostic
+              </h3>
+              <p className="mt-3 text-ink-muted">
+                An interactive tool that helps your leadership team assess
+                where your organisation stands across six culture
+                dimensions of the standard.
+              </p>
+              <p className="mt-4 text-purple-accent font-medium">
+                Take the diagnostic →
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Sticky TOC overlay (lg+ only) */}
+      <div className="hidden lg:block absolute inset-0 pointer-events-none">
+        <div className="max-w-[84rem] mx-auto px-6 h-full relative">
+          <aside className="absolute top-0 right-6 w-[15rem] h-full pointer-events-auto">
+            <TableOfContents items={tocItems} />
+          </aside>
+        </div>
+      </div>
     </article>
   )
 }
