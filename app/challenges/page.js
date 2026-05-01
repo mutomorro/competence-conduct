@@ -1,5 +1,15 @@
 import Link from 'next/link'
 import TableOfContents from '../../components/editorial/TableOfContents.jsx'
+import DownloadCard from '../../components/editorial/DownloadCard.jsx'
+
+const downloadCardProps = {
+  thumbnail: '/Challenges%20-%20Competence%20and%20Conduct.png',
+  title: 'Challenges Workshop',
+  description:
+    'A facilitated discussion guide for leadership teams exploring the six culture challenges.',
+  fileType: 'PDF',
+  href: '/downloads/Six%20Culture%20Challenges%20-%20Workshop%20Resource.pdf',
+}
 
 export const metadata = {
   title: 'Six culture challenges in the Competence and Conduct Standard',
@@ -524,11 +534,23 @@ export default function ChallengesPage() {
         </div>
       </section>
 
+      {/* Mobile/tablet download card — sidebar collapses below lg */}
+      <section className="lg:hidden w-full bg-warm-light">
+        <div className={bandInner}>
+          <div className="max-w-[28rem]">
+            <DownloadCard {...downloadCardProps} />
+          </div>
+        </div>
+      </section>
+
       {/* Sticky TOC overlay (lg+ only) */}
       <div className="hidden lg:block absolute inset-0 pointer-events-none">
         <div className="max-w-[84rem] mx-auto px-6 h-full relative">
           <aside className="absolute top-0 right-6 w-[15rem] h-full pointer-events-auto">
-            <TableOfContents items={tocItems} />
+            <div className="sticky top-24 space-y-7">
+              <TableOfContents items={tocItems} />
+              <DownloadCard {...downloadCardProps} />
+            </div>
           </aside>
         </div>
       </div>

@@ -1,5 +1,15 @@
 import Link from 'next/link'
 import TableOfContents from '../../components/editorial/TableOfContents.jsx'
+import DownloadCard from '../../components/editorial/DownloadCard.jsx'
+
+const downloadCardProps = {
+  thumbnail: '/Key%20Questions%20Thumbnail%20-%20Competence%20and%20Conduct.png',
+  title: 'Key Questions for Leadership Teams',
+  description:
+    'Five culture conversations for housing leaders preparing for the Competence and Conduct Standard.',
+  fileType: 'PPTX',
+  href: '/downloads/Competence%20%26%20Conduct%20Toolkit%20-%20Key%20Questions%20Slide%20Deck.pptx',
+}
 
 export const metadata = {
   title: 'Five culture questions for housing leadership teams',
@@ -332,11 +342,23 @@ export default function QuestionsPage() {
         </div>
       </section>
 
+      {/* Mobile/tablet download card — sidebar collapses below lg */}
+      <section className="lg:hidden w-full bg-warm-light">
+        <div className={bandInner}>
+          <div className="max-w-[28rem]">
+            <DownloadCard {...downloadCardProps} />
+          </div>
+        </div>
+      </section>
+
       {/* Sticky TOC overlay (lg+ only) */}
       <div className="hidden lg:block absolute inset-0 pointer-events-none">
         <div className="max-w-[84rem] mx-auto px-6 h-full relative">
           <aside className="absolute top-0 right-6 w-[15rem] h-full pointer-events-auto">
-            <TableOfContents items={tocItems} />
+            <div className="sticky top-24 space-y-7">
+              <TableOfContents items={tocItems} />
+              <DownloadCard {...downloadCardProps} />
+            </div>
           </aside>
         </div>
       </div>
