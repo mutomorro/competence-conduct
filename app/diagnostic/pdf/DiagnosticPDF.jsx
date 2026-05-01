@@ -237,7 +237,7 @@ function MutomorroPage() {
         <Text style={styles.mutoParagraph}>
           Mutomorro works with housing providers on culture, leadership, and organisational
           development. The Competence and Conduct Standard is one part of a broader conversation
-          about what good looks like in social housing — and how to build it deliberately.
+          about what good looks like in social housing - and how to build it deliberately.
         </Text>
         <Text style={styles.mutoParagraph}>
           If your organisation is thinking about culture readiness beyond this diagnostic, the
