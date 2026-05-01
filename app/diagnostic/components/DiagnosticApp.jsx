@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import WelcomeScreen from './WelcomeScreen'
 import DimensionScreen from './DimensionScreen'
 import ProgressBar from './ProgressBar'
@@ -17,10 +17,40 @@ const initialResponses = dimensions.reduce((acc, d) => {
   return acc
 }, {})
 
+// Varied seed for ?demo=1 — exercises all three statuses across the six cards,
+// including one all-embedded card to show the single-pill "quiet confidence" state.
+const demoPattern = [
+  ['embedded', 'working', 'attention'],
+  ['embedded', 'embedded', 'embedded'],
+  ['attention', 'attention', 'working'],
+  ['working', 'working', 'embedded'],
+  ['attention', 'embedded', 'working'],
+  ['working', 'embedded', 'attention'],
+]
+
+function buildDemoResponses() {
+  const seed = { ...initialResponses }
+  dimensions.forEach((d, i) => {
+    d.statements.forEach((s, j) => {
+      seed[s.id] = demoPattern[i]?.[j] ?? null
+    })
+  })
+  return seed
+}
+
 export default function DiagnosticApp() {
   const [currentStep, setCurrentStep] = useState(0)
   const [mode, setMode] = useState(null)
   const [responses, setResponses] = useState(initialResponses)
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('demo') === '1') {
+      setResponses(buildDemoResponses())
+      setMode('individual')
+      setCurrentStep(RESULTS_STEP)
+    }
+  }, [])
 
   function start(selectedMode) {
     setMode(selectedMode)
