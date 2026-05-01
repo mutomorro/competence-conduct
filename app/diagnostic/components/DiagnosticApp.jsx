@@ -40,20 +40,17 @@ function buildDemoResponses() {
 
 export default function DiagnosticApp() {
   const [currentStep, setCurrentStep] = useState(0)
-  const [mode, setMode] = useState(null)
   const [responses, setResponses] = useState(initialResponses)
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
     if (params.get('demo') === '1') {
       setResponses(buildDemoResponses())
-      setMode('individual')
       setCurrentStep(RESULTS_STEP)
     }
   }, [])
 
-  function start(selectedMode) {
-    setMode(selectedMode)
+  function start() {
     setCurrentStep(1)
     if (typeof window !== 'undefined') {
       window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -80,7 +77,6 @@ export default function DiagnosticApp() {
 
   function restart() {
     setResponses(initialResponses)
-    setMode(null)
     setCurrentStep(0)
     if (typeof window !== 'undefined') {
       window.scrollTo({ top: 0, behavior: 'smooth' })

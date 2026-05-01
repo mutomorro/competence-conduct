@@ -2,70 +2,78 @@
 
 export default function WelcomeScreen({ onStart }) {
   return (
-    <div className="mx-auto max-w-[42rem] px-6 py-16 md:py-24">
-      <p className="font-body text-xs uppercase tracking-[0.05em] font-medium text-purple-accent">
-        Culture readiness diagnostic
-      </p>
-      <h1 className="mt-3 font-display font-normal text-[2.75rem] md:text-[3.625rem] leading-[1.05] tracking-tight text-ink">
-        How ready is your organisation?
-      </h1>
+    <div className="mx-auto max-w-[84rem] px-6 py-16 md:py-24">
+      <div className="grid gap-12 lg:gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center">
+        {/* Left — copy + CTA */}
+        <div className="max-w-[34rem]">
+          <p className="font-body text-xs uppercase tracking-[0.05em] font-medium text-purple-accent">
+            Diagnostic
+          </p>
+          <h1 className="mt-3 font-display font-normal text-[2.75rem] md:text-[3.625rem] leading-[1.05] tracking-tight text-ink">
+            Your culture readiness profile
+          </h1>
 
-      <div className="mt-8 space-y-5 text-[17px] text-ink-muted leading-[1.7]">
-        <p>
-          A reflective pulse check across six dimensions of the
-          Competence and Conduct Standard. Not a compliance quiz - a
-          structured way to surface where the culture work is, and
-          where it isn&apos;t.
-        </p>
-        <p>
-          For each dimension, you&apos;ll read three specific
-          statements about what &quot;good&quot; looks like, and mark
-          where your organisation stands today. It takes around five
-          minutes.
-        </p>
+          <p className="mt-8 font-body text-[17px] leading-[1.7] text-ink-muted">
+            A structured self-assessment across six dimensions of culture
+            and conduct readiness. For each dimension, you&apos;ll consider
+            three statements and mark where your organisation stands today.
+            It takes about five minutes and produces a profile you can
+            download and share.
+          </p>
+
+          <p className="mt-5 font-body text-[15px] leading-[1.65] text-ink-faint">
+            Designed for individual reflection or as a conversation starter
+            with your leadership team. When used in a group, the
+            disagreements are usually the most valuable part.
+          </p>
+
+          <div className="mt-10">
+            <button
+              type="button"
+              onClick={onStart}
+              className="inline-flex items-center font-body text-[15px] font-semibold text-white bg-purple-primary hover:bg-purple-overlap transition-colors rounded-md px-7 py-3.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-primary focus-visible:ring-offset-2 focus-visible:ring-offset-warm-light"
+            >
+              Start the diagnostic
+            </button>
+          </div>
+
+          <p className="mt-10 font-body text-[14px] text-ink-faint leading-relaxed">
+            Your responses stay in your browser. Nothing is stored on our
+            servers. Download or email your results at the end if you want
+            to keep them.
+          </p>
+        </div>
+
+        {/* Right — preview screenshots (desktop+) */}
+        <div className="hidden md:block">
+          <PreviewStack />
+        </div>
       </div>
-
-      <div className="mt-12 grid gap-4 sm:grid-cols-2">
-        <ModeCard
-          title="Doing this alone"
-          body="For an individual leadership team member to reflect on where things stand."
-          onClick={() => onStart('individual')}
-        />
-        <ModeCard
-          title="Doing this with a team"
-          body="Run it individually first, then compare. The divergence between team members is often the most valuable finding."
-          onClick={() => onStart('team')}
-        />
-      </div>
-
-      <p className="mt-10 font-body text-[14px] text-ink-faint leading-relaxed">
-        Your responses stay in your browser. Nothing is stored on our
-        servers. Download or email your results at the end if you want
-        to keep them.
-      </p>
     </div>
   )
 }
 
-function ModeCard({ title, body, onClick }) {
+function PreviewStack() {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className="group flex flex-col items-start text-left bg-white border border-warm-mid border-l-[3px] border-l-warm-mid hover:border-l-purple-accent hover:shadow-sm transition-all duration-200 p-6 focus:outline-none focus-visible:border-l-purple-accent focus-visible:ring-2 focus-visible:ring-purple-accent focus-visible:ring-offset-2 focus-visible:ring-offset-warm-light"
-    >
-      <span className="font-display font-medium text-[20px] text-ink leading-snug">
-        {title}
-      </span>
-      <span className="mt-2 font-body text-[15px] text-ink-muted leading-relaxed">
-        {body}
-      </span>
-      <span
-        aria-hidden
-        className="mt-4 font-body text-[13px] text-purple-accent opacity-0 group-hover:opacity-100 transition-opacity"
-      >
-        Start →
-      </span>
-    </button>
+    <div className="relative aspect-[4/3] w-full max-w-[34rem] mx-auto">
+      {/* Back card — slightly smaller, offset up-right, rotated subtly */}
+      <div className="absolute top-0 right-0 w-[78%] rotate-[2deg] origin-bottom-left">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/Diagnostics%20-%20Competence%20and%20Conduct%202.png"
+          alt=""
+          className="w-full h-auto rounded-lg border border-warm-mid shadow-[0_18px_40px_-20px_rgba(14,15,14,0.25)]"
+        />
+      </div>
+      {/* Front card — larger, offset down-left, rotated the other way */}
+      <div className="absolute bottom-0 left-0 w-[86%] -rotate-[2deg] origin-top-right">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/Diagnostics%20-%20Competence%20and%20Conduct%201.png"
+          alt=""
+          className="w-full h-auto rounded-lg border border-warm-mid shadow-[0_24px_50px_-20px_rgba(14,15,14,0.3)]"
+        />
+      </div>
+    </div>
   )
 }
