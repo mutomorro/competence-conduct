@@ -42,7 +42,8 @@ export default function Nav() {
             />
             <span className="flex flex-col" style={{ gap: '4px' }}>
               <span className="font-display text-[22px] font-medium text-ink tracking-tight leading-none group-hover:text-purple-accent transition-colors">
-                Competence <em>&amp;</em> Conduct
+                Competence <em className="text-purple-accent">&amp;</em> Conduct{' '}
+                <span className="opacity-60">Toolkit</span>
               </span>
               <span className="font-body text-[13px] font-normal text-ink-muted leading-none">
                 Culture readiness guide for housing leaders
