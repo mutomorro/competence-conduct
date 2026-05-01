@@ -34,30 +34,32 @@ const questions = [
   {
     id: 'question-1',
     title:
-      'Can your front-line teams describe the behaviours expected of them - in their own words?',
+      'Can your resident-facing teams describe the behaviours expected of them - in their own words?',
     short: 'Can teams describe expected behaviours?',
     body: (
       <>
         <p className="mt-4">
-          Not what&apos;s written in the code of conduct. Not the values poster
-          on the wall. Can the people answering the phones and knocking on
-          doors tell you, in plain language, what &quot;good&quot; looks like
-          in how they treat residents?
+          Can the people answering the phones and knocking on doors tell you,
+          in plain language, what &quot;good&quot; looks like in how they
+          treat residents? Not from memory of a document - from how they
+          understand their role.
         </p>
         <p className="mt-4">
-          If the answer relies on a document nobody has read since induction,
-          the standard will surface that gap. The Regulator will be looking
-          for evidence that behaviours are{' '}
+          The Regulator will be looking for evidence that behaviours are{' '}
           <ExtLink href="https://www.gov.uk/government/consultations/competence-and-conduct-standard-for-social-housing-consultation/consultation-on-a-direction-to-the-regulator-of-social-housing-to-set-a-competence-and-conduct-standard-for-social-housing">
             understood and embedded
           </ExtLink>{' '}
-          - not just documented.
+          - not just documented. The distinction matters: a code of conduct
+          that lives in practice looks different from one that lives in a
+          policy folder.
         </p>
         <p className="mt-4">
-          The test is simple: ask five front-line colleagues what conduct is
-          expected of them. If you get five different answers, the code
-          isn&apos;t embedded. If you get the same answer in the same
-          corporate language, it might be memorised rather than lived.
+          A useful test: ask five resident-facing colleagues what conduct is
+          expected of them. Consistency is a good sign. But the most telling
+          indicator is whether the answers sound like real working life or
+          like a policy document being recited. The standard is looking for
+          evidence that behaviours are genuinely understood, not just
+          formally communicated.
         </p>
       </>
     ),
@@ -84,14 +86,14 @@ const questions = [
         </p>
         <p className="mt-4">
           Where things tend to get stuck is at this middle management level.
-          Front-line teams want to do the right thing. Senior leaders set the
+          Resident-facing teams want to do the right thing. Senior leaders set the
           direction. But the translation layer in between is where culture is
           either built or lost.
         </p>
         <p className="mt-4">
           If your managers were promoted for technical competence and
-          haven&apos;t been given the tools for culture leadership, the
-          standard will expose that.
+          haven&apos;t yet been given the tools for culture leadership, the
+          standard creates a useful reason to address that.
         </p>
       </>
     ),
@@ -99,7 +101,7 @@ const questions = [
   {
     id: 'question-3',
     title:
-      'Have residents genuinely shaped your code of conduct - or been consulted after the fact?',
+      'Have residents shaped your code of conduct - or been consulted on it after the fact?',
     short: 'Residents shaping the code, not consulted on it',
     body: (
       <>
@@ -112,13 +114,10 @@ const questions = [
           consultation.
         </p>
         <p className="mt-4">
-          Consultation asks:{' '}
-          <em>what do you think of this thing we&apos;ve already designed?</em>
-          <br />
-          Influence asks:{' '}
-          <em>
-            what matters to you, and how should that shape what we build?
-          </em>
+          Consultation can look like asking residents to respond to something
+          already drafted. Influence looks like involving them in shaping it
+          from the start. The standard is explicit about expecting the
+          latter.
         </p>
         <p className="mt-4">
           Residents aren&apos;t housing experts, and they&apos;re not expected
@@ -154,12 +153,11 @@ const questions = [
           just what they know?
         </p>
         <p className="mt-4">
-          Attendance records don&apos;t evidence culture change. Certificates
-          don&apos;t evidence embedded behaviours. What does evidence it is
-          the resident who notices they&apos;re being spoken to differently.
-          The complaint that was handled with curiosity rather than
-          defensiveness. The safety concern that was escalated because
-          someone felt the environment was safe enough to raise it.
+          Attendance and completion data are valuable for tracking
+          participation, but the standard asks for something further -
+          evidence that development is changing how people work and how
+          residents experience services. That&apos;s a higher bar than most
+          L&amp;D reporting is currently set up to meet.
         </p>
         <p className="mt-4">
           If your L&amp;D measures inputs (who attended what) but not
@@ -198,13 +196,13 @@ const questions = [
             regulatory expectation
           </ExtLink>
           , not just a cultural preference. That changes the conversation.
-          But only if organisations are willing to have it.
+          But only if the conversation happens openly.
         </p>
         <p className="mt-4">
-          The honest version of this question: are there people in your
+          A harder question underneath this one: are there people in your
           organisation right now whose conduct wouldn&apos;t meet the
           standard you&apos;d want to evidence to the Regulator? And if so,
-          what&apos;s preventing that from being addressed?
+          what would need to change to address that?
         </p>
       </>
     ),
