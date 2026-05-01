@@ -38,11 +38,11 @@ function ExtLink({ href, children }) {
 }
 
 const chapters = [
-  { id: 'two-halves', title: 'The two halves of the standard' },
-  { id: 'direction', title: 'What the Direction requires' },
+  { id: 'two-halves', title: 'Qualifications vs culture' },
+  { id: 'direction', title: 'Six culture and conduct obligations' },
   { id: 'not-prescribed', title: 'What it does not prescribe' },
   { id: 'regulated', title: 'How it will be regulated' },
-  { id: 'origins', title: 'Where this came from' },
+  { id: 'origins', title: 'From Grenfell to regulation' },
 ]
 
 const obligations = [
@@ -351,7 +351,7 @@ export default function StandardPage() {
             id="two-halves"
             number={1}
             total={5}
-            title="The two halves of the standard"
+            title="Qualifications vs culture: the two sides of the standard"
           />
           <PullQuote decorated>
             The qualification requirements are more visible. The culture
@@ -403,7 +403,7 @@ export default function StandardPage() {
             id="direction"
             number={2}
             total={5}
-            title="What the Direction requires on culture and conduct"
+            title="Six culture and conduct obligations"
           />
           <PullQuote>
             Six specific obligations - each one carrying more practical
@@ -557,7 +557,7 @@ export default function StandardPage() {
             id="origins"
             number={5}
             total={5}
-            title="Where this came from"
+            title="From Grenfell to regulation: why this standard exists"
           />
           <PullQuote>
             Grenfell, the Green Paper, and a professionalisation review that
