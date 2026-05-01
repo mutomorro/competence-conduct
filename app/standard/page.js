@@ -1,8 +1,6 @@
 import Link from 'next/link'
-import SectionWrapper from '../../components/SectionWrapper.jsx'
 import ReadingMeta from '../../components/editorial/ReadingMeta.jsx'
 import ChapterOpener from '../../components/editorial/ChapterOpener.jsx'
-import SectionDivider from '../../components/editorial/SectionDivider.jsx'
 import PullQuote from '../../components/editorial/PullQuote.jsx'
 import StatFigure from '../../components/editorial/StatFigure.jsx'
 import Timeline from '../../components/editorial/Timeline.jsx'
@@ -290,358 +288,349 @@ const closingCards = [
   },
 ]
 
+const bandInner = 'max-w-[84rem] mx-auto px-6 lg:pr-[18rem] py-16 md:py-20'
+
 export default function StandardPage() {
   return (
-    <article>
-      <SectionWrapper id="top">
-        <div className="lg:grid lg:grid-cols-[minmax(0,56rem)_15rem] lg:gap-16">
-          {/* Main column */}
-          <div>
-            <p className="text-xs uppercase tracking-[0.05em] font-medium text-purple-accent mb-2">
-              The Standard
+    <article className="relative" id="top">
+      {/* Band 1 — Page header */}
+      <section className="w-full bg-warm-light">
+        <div className={bandInner}>
+          <p className="text-xs uppercase tracking-[0.05em] font-medium text-purple-accent mb-2">
+            The Standard
+          </p>
+          <h1 className="font-display font-normal text-[2.75rem] md:text-[3.625rem] leading-[1.05] tracking-tight text-ink">
+            The Competence and Conduct Standard: culture and behaviour
+            requirements
+          </h1>
+
+          <ReadingMeta readTime={9} lastUpdated="30 April 2026" sections={5} />
+
+          <div className="mt-10 space-y-5 max-w-[42rem]">
+            <p className="dropcap">
+              The{' '}
+              <ExtLink href="https://www.gov.uk/government/consultations/competence-and-conduct-standard-for-social-housing-consultation">
+                Competence and Conduct Standard
+              </ExtLink>{' '}
+              comes into force in October 2026. It applies to all registered
+              providers of social housing in England and sets requirements
+              across two areas: qualifications for senior staff, and the
+              culture, behaviours, and conduct expectations that apply to
+              everyone involved in delivering housing management services.
             </p>
-            <h1 className="font-display font-normal text-[2.75rem] md:text-[3.625rem] leading-[1.05] tracking-tight text-ink">
-              The Competence and Conduct Standard: culture and behaviour
-              requirements
-            </h1>
-
-            <ReadingMeta
-              readTime={9}
-              lastUpdated="30 April 2026"
-              sections={5}
-            />
-
-            <div className="mt-10 space-y-5 max-w-[42rem]">
-              <p className="dropcap">
-                The{' '}
-                <ExtLink href="https://www.gov.uk/government/consultations/competence-and-conduct-standard-for-social-housing-consultation">
-                  Competence and Conduct Standard
-                </ExtLink>{' '}
-                comes into force in October 2026. It applies to all
-                registered providers of social housing in England and sets
-                requirements across two areas: qualifications for senior
-                staff, and the culture, behaviours, and conduct
-                expectations that apply to everyone involved in delivering
-                housing management services.
-              </p>
-              <p>
-                This page focuses on the second part - the culture and
-                behaviour requirements. These are the clauses that receive
-                less attention than the qualification headlines but will,
-                for most providers, require more fundamental work. The
-                qualification requirements have a defined path. The culture
-                requirements ask each provider to build its own.
-              </p>
-            </div>
-
-            {/* Key facts strip */}
-            <div className="mt-12 grid gap-4 md:grid-cols-3 max-w-[56rem]">
-              <StatFigure
-                value="October 2026"
-                label="Comes into force"
-              />
-              <StatFigure
-                value="Level 4 / 5"
-                label="Qualifications"
-                sub="Senior managers / executives"
-              />
-              <StatFigure
-                value="3 / 4 years"
-                label="Transition periods"
-                sub="Larger / smaller providers"
-              />
-            </div>
-
-            {/* Chapter 01 */}
-            <section className="mt-20">
-              <ChapterOpener
-                id="two-halves"
-                number={1}
-                total={5}
-                title="The two halves of the standard"
-              />
-              <PullQuote decorated>
-                The qualification requirements get most of the attention.
-                The culture requirements will do most of the work.
-              </PullQuote>
-              <div className="space-y-4 max-w-[42rem]">
-                <p>
-                  The Competence and Conduct Standard has two distinct
-                  parts, and the sector conversation has overwhelmingly
-                  focused on one of them.
-                </p>
-                <p>
-                  The{' '}
-                  <ExtLink href="https://www.cih.org/knowledge-hub/professionalism-and-training/competence-and-conduct-standard/">
-                    qualification requirements
-                  </ExtLink>{' '}
-                  are specific: Level 4 for senior housing managers, Level
-                  5 or a foundation degree for senior housing executives, a
-                  transition period of three years for larger providers
-                  and four for smaller ones, and a growing number of
-                  courses from CIH and others to get people enrolled.
-                  Challenging to implement at scale, but structured. There
-                  is a defined path to compliance.
-                </p>
-                <p>
-                  The culture and behaviour requirements are different.
-                  They apply to all staff involved in delivering housing
-                  management services - not just senior leaders - and
-                  they cover territory that no course can certify: how
-                  people behave, how conduct is defined and embedded, how
-                  residents experience the service, and whether the
-                  organisation can evidence that its development work is
-                  producing real change.
-                </p>
-                <p>
-                  This distinction matters because it shapes how providers
-                  need to prepare. The qualifications programme is a
-                  project with a clear endpoint. The culture work is an
-                  ongoing commitment with no finish line - and the
-                  Regulator will expect to see it underway from October
-                  2026, not deferred until the qualifications are sorted.
-                </p>
-              </div>
-            </section>
-
-            <SectionDivider />
-
-            {/* Chapter 02 */}
-            <section>
-              <ChapterOpener
-                id="direction"
-                number={2}
-                total={5}
-                title="What the Direction requires on culture and conduct"
-              />
-              <PullQuote>
-                Six specific obligations - each one carrying more
-                practical weight than it first appears.
-              </PullQuote>
-              <p className="max-w-[42rem]">
-                The government&apos;s{' '}
-                <ExtLink href="https://www.gov.uk/government/consultations/competence-and-conduct-standard-for-social-housing-consultation/outcome/direction-on-the-regulatory-standards-competence-and-conduct-2025--2">
-                  Direction to the Regulator of Social Housing
-                </ExtLink>
-                , published in September 2025, sets out exactly what the
-                standard must require. On the culture and conduct side,
-                registered providers must:
-              </p>
-
-              <div className="mt-10">
-                {obligations.map((o, i) => (
-                  <div
-                    key={o.title}
-                    className={
-                      i === 0
-                        ? ''
-                        : 'mt-10 pt-10 border-t border-warm-mid'
-                    }
-                  >
-                    <h3 className="font-display font-medium text-[1.5rem] leading-[1.25] text-ink">
-                      {o.title}
-                    </h3>
-                    <div className="max-w-[42rem]">{o.body}</div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <SectionDivider />
-
-            {/* Chapter 03 */}
-            <section>
-              <ChapterOpener
-                id="not-prescribed"
-                number={3}
-                total={5}
-                title="What the standard deliberately does not prescribe"
-              />
-              <PullQuote>
-                The Regulator will not tell you what good conduct looks
-                like in your organisation. That is the point.
-              </PullQuote>
-              <div className="space-y-4 max-w-[42rem]">
-                <p>
-                  One of the most important features of the standard is
-                  what it does not do. It does not provide a national
-                  framework of expected behaviours. It does not prescribe
-                  what a code of conduct should contain. It does not
-                  mandate specific recruitment, appraisal, or performance
-                  management practices. It does not define what
-                  &quot;embedded&quot; looks like in operational terms.
-                </p>
-                <p>
-                  This is deliberate. The{' '}
-                  <ExtLink href="https://www.gov.uk/government/consultations/competence-and-conduct-standard-for-social-housing-consultation/outcome/competence-and-conduct-standard-for-social-housing-government-response">
-                    government&apos;s consultation response
-                  </ExtLink>{' '}
-                  is explicit: the standard takes an outcomes-focused
-                  approach rather than a prescriptive one, reflecting the
-                  Regulator&apos;s statutory duty to minimise interference
-                  and allow providers to deliver outcomes in the way that
-                  best fits their organisation and their tenants.
-                </p>
-                <p>
-                  For providers, this creates both freedom and difficulty.
-                  Freedom, because the approach can be shaped to the
-                  organisation&apos;s context, communities, and services.
-                  Difficulty, because the work of defining what good
-                  conduct means - in specific, observable, evidenceable
-                  terms - now sits with each individual provider. There is
-                  no template to adopt that will satisfy the Regulator.
-                  The expectation is that what you produce is genuinely
-                  yours, genuinely embedded, and genuinely making a
-                  difference to how residents experience your services.
-                </p>
-              </div>
-            </section>
-
-            <SectionDivider />
-
-            {/* Chapter 04 */}
-            <section>
-              <ChapterOpener
-                id="regulated"
-                number={4}
-                total={5}
-                title="How it will be regulated"
-              />
-              <PullQuote>
-                Outcomes-focused, assurance-led, and folded into an
-                existing standard.
-              </PullQuote>
-              <div className="space-y-4 max-w-[42rem]">
-                <p>
-                  The{' '}
-                  <ExtLink href="https://www.gov.uk/government/news/rsh-launches-consultation-on-updates-to-consumer-standards-and-requirements">
-                    Regulator of Social Housing
-                  </ExtLink>{' '}
-                  will incorporate the competence and conduct
-                  requirements into the existing Transparency, Influence
-                  and Accountability Standard, rather than creating a
-                  standalone standard. The RSH launched its own
-                  consultation on this integration in December 2025.
-                </p>
-                <p>
-                  This approach has practical implications. It means
-                  competence and conduct will be regulated alongside
-                  requirements around resident engagement, transparency,
-                  and accountability - which is logical, given the
-                  overlap. But it also means the requirements will sit
-                  within a broader framework rather than standing alone
-                  as a distinct regulatory focus.
-                </p>
-                <p>
-                  <ExtLink href="https://www.housingtoday.co.uk/news/cih-concerned-new-competence-and-conduct-requirements-may-not-be-taken-seriously-by-rps-if-wound-into-existing-standard/5141099.article">
-                    CIH has publicly raised concerns
-                  </ExtLink>{' '}
-                  about this approach, arguing that folding competence
-                  and conduct into the TI&amp;A Standard could signal a
-                  downgrading of the importance of the requirements and
-                  risks them not being taken seriously enough by some
-                  providers. Whether that concern proves justified will
-                  depend on how prominently the Regulator treats these
-                  requirements in its assurance work.
-                </p>
-                <p>
-                  The regulatory approach is outcomes-focused. The
-                  Regulator will not inspect against a checklist of
-                  prescribed practices. Instead, it will look at whether
-                  providers can demonstrate that their approach is
-                  working - that behaviours are genuinely embedded, that
-                  residents have genuinely influenced the code of
-                  conduct, that development activity is producing
-                  measurable improvements, and that poor conduct is being
-                  addressed.
-                </p>
-                <p>
-                  For boards and governance committees, this means being
-                  prepared for a conversation about evidence and
-                  outcomes, not a document review. The Regulator will
-                  want to understand what has changed as a result of the
-                  work - not just what policies are in place.
-                </p>
-              </div>
-            </section>
-
-            <SectionDivider />
-
-            {/* Chapter 05 — origins as timeline */}
-            <section>
-              <ChapterOpener
-                id="origins"
-                number={5}
-                total={5}
-                title="Where this came from"
-              />
-              <PullQuote>
-                Grenfell, the Green Paper, and a professionalisation
-                review that concluded culture change was necessary.
-              </PullQuote>
-              <p className="max-w-[42rem]">
-                The Competence and Conduct Standard did not emerge from a
-                policy exercise. It emerged from a series of failures in
-                how social housing providers treated the people they
-                serve.
-              </p>
-
-              <div className="mt-10 max-w-[56rem]">
-                <Timeline items={originsTimeline} />
-              </div>
-
-              <p className="mt-10 max-w-[42rem]">
-                This history matters because it shapes what the Regulator
-                will be looking for. The standard was not created to add
-                another compliance layer. It was created because residents
-                were being failed by the culture of the organisations that
-                were supposed to serve them. The Regulator will be asking
-                whether that culture is genuinely changing - not just
-                whether the paperwork is in order.
-              </p>
-            </section>
-
-            {/* Closing */}
-            <div className="mt-16 border-t border-warm-mid pt-10">
-              <div className="max-w-[42rem] space-y-4">
-                <p>
-                  The standard is clear about what it expects. The
-                  challenge is in the execution - particularly on the
-                  culture and behaviour side, where there is no prescribed
-                  path and no template to follow.
-                </p>
-                <p>
-                  Three resources on this site are designed to help
-                  leadership teams work through that challenge:
-                </p>
-              </div>
-
-              <div className="mt-8 grid gap-6 md:grid-cols-3 max-w-[56rem]">
-                {closingCards.map((c) => (
-                  <Link
-                    key={c.href}
-                    href={c.href}
-                    className="group block bg-white border-l-[3px] border-purple-accent hover:bg-warm-light/50 transition-colors p-6"
-                  >
-                    <h3 className="font-display font-medium text-[1.5rem] leading-[1.25] text-ink">
-                      {c.title}
-                    </h3>
-                    <p className="mt-3 text-ink-muted">{c.body}</p>
-                    <p className="mt-4 text-purple-accent font-medium">
-                      {c.cta} →
-                    </p>
-                  </Link>
-                ))}
-              </div>
-            </div>
+            <p>
+              This page focuses on the second part - the culture and
+              behaviour requirements. These are the clauses that receive less
+              attention than the qualification headlines but will, for most
+              providers, require more fundamental work. The qualification
+              requirements have a defined path. The culture requirements ask
+              each provider to build its own.
+            </p>
           </div>
 
-          {/* TOC sidebar (desktop only) */}
-          <aside>
+          <div className="mt-12 grid gap-4 md:grid-cols-3 max-w-[56rem]">
+            <StatFigure value="October 2026" label="Comes into force" />
+            <StatFigure
+              value="Level 4 / 5"
+              label="Qualifications"
+              sub="Senior managers / executives"
+            />
+            <StatFigure
+              value="3 / 4 years"
+              label="Transition periods"
+              sub="Larger / smaller providers"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Band 2 — Chapter 1 */}
+      <section className="w-full bg-white">
+        <div className={bandInner}>
+          <ChapterOpener
+            id="two-halves"
+            number={1}
+            total={5}
+            title="The two halves of the standard"
+          />
+          <PullQuote decorated>
+            The qualification requirements get most of the attention. The
+            culture requirements will do most of the work.
+          </PullQuote>
+          <div className="space-y-4 max-w-[42rem]">
+            <p>
+              The Competence and Conduct Standard has two distinct parts, and
+              the sector conversation has overwhelmingly focused on one of
+              them.
+            </p>
+            <p>
+              The{' '}
+              <ExtLink href="https://www.cih.org/knowledge-hub/professionalism-and-training/competence-and-conduct-standard/">
+                qualification requirements
+              </ExtLink>{' '}
+              are specific: Level 4 for senior housing managers, Level 5 or
+              a foundation degree for senior housing executives, a transition
+              period of three years for larger providers and four for smaller
+              ones, and a growing number of courses from CIH and others to
+              get people enrolled. Challenging to implement at scale, but
+              structured. There is a defined path to compliance.
+            </p>
+            <p>
+              The culture and behaviour requirements are different. They
+              apply to all staff involved in delivering housing management
+              services - not just senior leaders - and they cover territory
+              that no course can certify: how people behave, how conduct is
+              defined and embedded, how residents experience the service,
+              and whether the organisation can evidence that its development
+              work is producing real change.
+            </p>
+            <p>
+              This distinction matters because it shapes how providers need
+              to prepare. The qualifications programme is a project with a
+              clear endpoint. The culture work is an ongoing commitment with
+              no finish line - and the Regulator will expect to see it
+              underway from October 2026, not deferred until the
+              qualifications are sorted.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Band 3 — Chapter 2 */}
+      <section className="w-full bg-warm-light">
+        <div className={bandInner}>
+          <ChapterOpener
+            id="direction"
+            number={2}
+            total={5}
+            title="What the Direction requires on culture and conduct"
+          />
+          <PullQuote>
+            Six specific obligations - each one carrying more practical
+            weight than it first appears.
+          </PullQuote>
+          <p className="max-w-[42rem]">
+            The government&apos;s{' '}
+            <ExtLink href="https://www.gov.uk/government/consultations/competence-and-conduct-standard-for-social-housing-consultation/outcome/direction-on-the-regulatory-standards-competence-and-conduct-2025--2">
+              Direction to the Regulator of Social Housing
+            </ExtLink>
+            , published in September 2025, sets out exactly what the standard
+            must require. On the culture and conduct side, registered
+            providers must:
+          </p>
+
+          <div className="mt-10">
+            {obligations.map((o, i) => (
+              <div
+                key={o.title}
+                className={
+                  i === 0 ? '' : 'mt-10 pt-10 border-t border-warm-mid'
+                }
+              >
+                <h3 className="font-display font-medium text-[1.5rem] leading-[1.25] text-ink">
+                  {o.title}
+                </h3>
+                <div className="max-w-[42rem]">{o.body}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Band 4 — Chapter 3 */}
+      <section className="w-full bg-white">
+        <div className={bandInner}>
+          <ChapterOpener
+            id="not-prescribed"
+            number={3}
+            total={5}
+            title="What the standard deliberately does not prescribe"
+          />
+          <PullQuote>
+            The Regulator will not tell you what good conduct looks like in
+            your organisation. That is the point.
+          </PullQuote>
+          <div className="space-y-4 max-w-[42rem]">
+            <p>
+              One of the most important features of the standard is what it
+              does not do. It does not provide a national framework of
+              expected behaviours. It does not prescribe what a code of
+              conduct should contain. It does not mandate specific
+              recruitment, appraisal, or performance management practices. It
+              does not define what &quot;embedded&quot; looks like in
+              operational terms.
+            </p>
+            <p>
+              This is deliberate. The{' '}
+              <ExtLink href="https://www.gov.uk/government/consultations/competence-and-conduct-standard-for-social-housing-consultation/outcome/competence-and-conduct-standard-for-social-housing-government-response">
+                government&apos;s consultation response
+              </ExtLink>{' '}
+              is explicit: the standard takes an outcomes-focused approach
+              rather than a prescriptive one, reflecting the Regulator&apos;s
+              statutory duty to minimise interference and allow providers to
+              deliver outcomes in the way that best fits their organisation
+              and their tenants.
+            </p>
+            <p>
+              For providers, this creates both freedom and difficulty.
+              Freedom, because the approach can be shaped to the
+              organisation&apos;s context, communities, and services.
+              Difficulty, because the work of defining what good conduct
+              means - in specific, observable, evidenceable terms - now sits
+              with each individual provider. There is no template to adopt
+              that will satisfy the Regulator. The expectation is that what
+              you produce is genuinely yours, genuinely embedded, and
+              genuinely making a difference to how residents experience your
+              services.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Band 5 — Chapter 4 */}
+      <section className="w-full bg-warm-light">
+        <div className={bandInner}>
+          <ChapterOpener
+            id="regulated"
+            number={4}
+            total={5}
+            title="How it will be regulated"
+          />
+          <PullQuote>
+            Outcomes-focused, assurance-led, and folded into an existing
+            standard.
+          </PullQuote>
+          <div className="space-y-4 max-w-[42rem]">
+            <p>
+              The{' '}
+              <ExtLink href="https://www.gov.uk/government/news/rsh-launches-consultation-on-updates-to-consumer-standards-and-requirements">
+                Regulator of Social Housing
+              </ExtLink>{' '}
+              will incorporate the competence and conduct requirements into
+              the existing Transparency, Influence and Accountability
+              Standard, rather than creating a standalone standard. The RSH
+              launched its own consultation on this integration in December
+              2025.
+            </p>
+            <p>
+              This approach has practical implications. It means competence
+              and conduct will be regulated alongside requirements around
+              resident engagement, transparency, and accountability - which
+              is logical, given the overlap. But it also means the
+              requirements will sit within a broader framework rather than
+              standing alone as a distinct regulatory focus.
+            </p>
+            <p>
+              <ExtLink href="https://www.housingtoday.co.uk/news/cih-concerned-new-competence-and-conduct-requirements-may-not-be-taken-seriously-by-rps-if-wound-into-existing-standard/5141099.article">
+                CIH has publicly raised concerns
+              </ExtLink>{' '}
+              about this approach, arguing that folding competence and
+              conduct into the TI&amp;A Standard could signal a downgrading
+              of the importance of the requirements and risks them not being
+              taken seriously enough by some providers. Whether that concern
+              proves justified will depend on how prominently the Regulator
+              treats these requirements in its assurance work.
+            </p>
+            <p>
+              The regulatory approach is outcomes-focused. The Regulator will
+              not inspect against a checklist of prescribed practices.
+              Instead, it will look at whether providers can demonstrate that
+              their approach is working - that behaviours are genuinely
+              embedded, that residents have genuinely influenced the code of
+              conduct, that development activity is producing measurable
+              improvements, and that poor conduct is being addressed.
+            </p>
+            <p>
+              For boards and governance committees, this means being prepared
+              for a conversation about evidence and outcomes, not a document
+              review. The Regulator will want to understand what has changed
+              as a result of the work - not just what policies are in place.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Band 6 — Chapter 5 */}
+      <section className="w-full bg-white">
+        <div className={bandInner}>
+          <ChapterOpener
+            id="origins"
+            number={5}
+            total={5}
+            title="Where this came from"
+          />
+          <PullQuote>
+            Grenfell, the Green Paper, and a professionalisation review that
+            concluded culture change was necessary.
+          </PullQuote>
+          <p className="max-w-[42rem]">
+            The Competence and Conduct Standard did not emerge from a policy
+            exercise. It emerged from a series of failures in how social
+            housing providers treated the people they serve.
+          </p>
+
+          <div className="mt-10 max-w-[56rem]">
+            <Timeline items={originsTimeline} />
+          </div>
+
+          <p className="mt-10 max-w-[42rem]">
+            This history matters because it shapes what the Regulator will be
+            looking for. The standard was not created to add another
+            compliance layer. It was created because residents were being
+            failed by the culture of the organisations that were supposed to
+            serve them. The Regulator will be asking whether that culture is
+            genuinely changing - not just whether the paperwork is in order.
+          </p>
+        </div>
+      </section>
+
+      {/* Band 7 — Closing cross-links */}
+      <section className="w-full bg-warm-light">
+        <div className={bandInner}>
+          <div className="max-w-[42rem] space-y-4">
+            <p>
+              The standard is clear about what it expects. The challenge is
+              in the execution - particularly on the culture and behaviour
+              side, where there is no prescribed path and no template to
+              follow.
+            </p>
+            <p>
+              Three resources on this site are designed to help leadership
+              teams work through that challenge:
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-3 max-w-[56rem]">
+            {closingCards.map((c) => (
+              <Link
+                key={c.href}
+                href={c.href}
+                className="group block bg-white border-l-[3px] border-purple-accent hover:bg-warm-light/50 transition-colors p-6"
+              >
+                <h3 className="font-display font-medium text-[1.5rem] leading-[1.25] text-ink">
+                  {c.title}
+                </h3>
+                <p className="mt-3 text-ink-muted">{c.body}</p>
+                <p className="mt-4 text-purple-accent font-medium">
+                  {c.cta} →
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sticky TOC overlay (lg+ only) */}
+      <div
+        className="hidden lg:block absolute inset-0 pointer-events-none"
+        aria-hidden="false"
+      >
+        <div className="max-w-[84rem] mx-auto px-6 h-full relative">
+          <aside className="absolute top-0 right-6 w-[15rem] h-full pointer-events-auto">
             <TableOfContents items={chapters} />
           </aside>
         </div>
-      </SectionWrapper>
+      </div>
     </article>
   )
 }
