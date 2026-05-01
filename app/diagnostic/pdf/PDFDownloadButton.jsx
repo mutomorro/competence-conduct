@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { countResponses, track } from '../../../lib/analytics'
 
 export default function PDFDownloadButton({ responses, className }) {
   const [state, setState] = useState('idle')
@@ -27,17 +28,7 @@ export default function PDFDownloadButton({ responses, className }) {
       document.body.removeChild(link)
       URL.revokeObjectURL(url)
 
-      if (typeof window !== 'undefined' && window.posthog) {
-        const counts = { embedded: 0, working: 0, attention: 0 }
-        Object.values(responses).forEach((v) => {
-          if (v && counts[v] != null) counts[v] += 1
-        })
-        window.posthog.capture('diagnostic_pdf_downloaded', {
-          total_embedded: counts.embedded,
-          total_working: counts.working,
-          total_attention: counts.attention,
-        })
-      }
+      track('diagnostic_pdf_downloaded', countResponses(responses))
 
       setState('idle')
     } catch (err) {

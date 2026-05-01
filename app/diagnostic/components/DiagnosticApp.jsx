@@ -6,6 +6,7 @@ import DimensionScreen from './DimensionScreen'
 import ProgressBar from './ProgressBar'
 import ResultsPage from './ResultsPage'
 import { dimensions } from '../data/dimensions'
+import { track } from '../../../lib/analytics'
 
 const TOTAL_DIMENSIONS = dimensions.length
 const RESULTS_STEP = TOTAL_DIMENSIONS + 1
@@ -51,6 +52,7 @@ export default function DiagnosticApp() {
   }, [])
 
   function start() {
+    track('diagnostic_started')
     setCurrentStep(1)
     if (typeof window !== 'undefined') {
       window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -62,7 +64,16 @@ export default function DiagnosticApp() {
   }
 
   function next() {
-    setCurrentStep((s) => Math.min(s + 1, RESULTS_STEP))
+    setCurrentStep((s) => {
+      const dim = dimensions[s - 1]
+      if (dim) {
+        track('diagnostic_dimension_completed', {
+          dimension_number: dim.id,
+          dimension_name: dim.name,
+        })
+      }
+      return Math.min(s + 1, RESULTS_STEP)
+    })
     if (typeof window !== 'undefined') {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }

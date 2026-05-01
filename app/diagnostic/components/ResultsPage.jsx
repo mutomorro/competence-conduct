@@ -1,8 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ResultsHeader from './ResultsHeader'
 import { dimensions, trafficLightOptions } from '../data/dimensions'
+import { storeDiagnosticResponses } from '../../../lib/diagnosticStorage'
+import { countResponses, track } from '../../../lib/analytics'
 
 const optionByValue = Object.fromEntries(
   trafficLightOptions.map((o) => [o.value, o])
@@ -31,30 +33,92 @@ const statusStyles = {
 
 const STATUS_KEYS = ['embedded', 'working', 'attention']
 
-function formatDate() {
-  const d = new Date()
-  return d.toLocaleDateString('en-GB', {
+function formatDate(date) {
+  return date.toLocaleDateString('en-GB', {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
   })
 }
 
+function isValidEmail(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((value || '').trim())
+}
+
 export default function ResultsPage({ responses, onRestart }) {
   const [emailOpen, setEmailOpen] = useState(false)
   const [emailValue, setEmailValue] = useState('')
-  const [emailSubmitted, setEmailSubmitted] = useState(false)
+  const [emailState, setEmailState] = useState('idle')
+  const [emailError, setEmailError] = useState(null)
+  const [sentTo, setSentTo] = useState(null)
+  const responseIdRef = useRef(null)
+  const completedAtRef = useRef(new Date())
 
   const counts = { embedded: 0, working: 0, attention: 0 }
   Object.values(responses).forEach((v) => {
     if (v && counts[v] != null) counts[v] += 1
   })
 
-  const completedDate = formatDate()
+  const completedDate = formatDate(completedAtRef.current)
 
-  function handleEmailSubmit(e) {
+  // Fire diagnostic_completed + persist anonymously, once per mount.
+  useEffect(() => {
+    track('diagnostic_completed', countResponses(responses))
+    let cancelled = false
+    storeDiagnosticResponses(responses).then((id) => {
+      if (!cancelled) responseIdRef.current = id
+    })
+    return () => {
+      cancelled = true
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  function openEmailForm() {
+    setEmailOpen(true)
+    setEmailError(null)
+  }
+
+  function cancelEmailForm() {
+    setEmailOpen(false)
+    setEmailError(null)
+    setEmailValue('')
+  }
+
+  async function handleEmailSubmit(e) {
     e.preventDefault()
-    setEmailSubmitted(true)
+    const trimmed = emailValue.trim()
+    if (!isValidEmail(trimmed)) {
+      setEmailError('Please enter a valid email address.')
+      return
+    }
+    setEmailError(null)
+    setEmailState('sending')
+    track('diagnostic_email_requested', countResponses(responses))
+
+    try {
+      const res = await fetch('/api/send-results', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: trimmed,
+          responseId: responseIdRef.current,
+          responses,
+          completedAt: completedAtRef.current.toISOString(),
+        }),
+      })
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        throw new Error(data.error || 'Something went wrong.')
+      }
+      track('diagnostic_email_sent', countResponses(responses))
+      setSentTo(trimmed)
+      setEmailState('sent')
+    } catch (err) {
+      console.error('Send results failed:', err)
+      setEmailError(err.message || 'Could not send the email. Try again?')
+      setEmailState('idle')
+    }
   }
 
   return (
@@ -62,12 +126,15 @@ export default function ResultsPage({ responses, onRestart }) {
       <ResultsHeader
         completedDate={completedDate}
         responses={responses}
-        onEmail={() => setEmailOpen(true)}
         emailOpen={emailOpen}
         emailValue={emailValue}
         onEmailChange={setEmailValue}
+        onEmailOpen={openEmailForm}
+        onEmailCancel={cancelEmailForm}
         onEmailSubmit={handleEmailSubmit}
-        emailSubmitted={emailSubmitted}
+        emailState={emailState}
+        emailError={emailError}
+        sentTo={sentTo}
       />
 
       {/* Summary stats bar */}

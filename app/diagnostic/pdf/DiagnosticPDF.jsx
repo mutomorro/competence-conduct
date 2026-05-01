@@ -9,22 +9,37 @@ import {
 import { dimensions } from '../data/dimensions'
 import { styles, colors, statusMeta, PAGE_W, PAGE_H } from './styles'
 
-Font.register({
-  family: 'Inter',
-  fonts: [
-    { src: '/fonts/Inter-Regular.ttf', fontWeight: 400 },
-    { src: '/fonts/Inter-SemiBold.ttf', fontWeight: 500 },
-    { src: '/fonts/Inter-SemiBold.ttf', fontWeight: 600 },
-  ],
-})
+// URL-based defaults — work in the browser. The server route handler
+// passes a different `assets` prop with absolute filesystem paths.
+const DEFAULT_ASSETS = {
+  logoSrc: '/Mutomorro%20logo%20-%20black.png',
+  fonts: {
+    interRegular: '/fonts/Inter-Regular.ttf',
+    interSemiBold: '/fonts/Inter-SemiBold.ttf',
+    outfitRegular: '/fonts/Outfit-Regular.ttf',
+    outfitSemiBold: '/fonts/Outfit-SemiBold.ttf',
+  },
+}
 
-Font.register({
-  family: 'Outfit',
-  fonts: [
-    { src: '/fonts/Outfit-Regular.ttf', fontWeight: 400 },
-    { src: '/fonts/Outfit-SemiBold.ttf', fontWeight: 600 },
-  ],
-})
+// Font.register is global to @react-pdf/renderer and idempotent for
+// identical inputs. Calling it on every render is cheap.
+function registerFonts(assets) {
+  Font.register({
+    family: 'Inter',
+    fonts: [
+      { src: assets.fonts.interRegular, fontWeight: 400 },
+      { src: assets.fonts.interSemiBold, fontWeight: 500 },
+      { src: assets.fonts.interSemiBold, fontWeight: 600 },
+    ],
+  })
+  Font.register({
+    family: 'Outfit',
+    fonts: [
+      { src: assets.fonts.outfitRegular, fontWeight: 400 },
+      { src: assets.fonts.outfitSemiBold, fontWeight: 600 },
+    ],
+  })
+}
 
 const STATUS_KEYS = ['embedded', 'working', 'attention']
 
@@ -72,11 +87,11 @@ function DecoCircles({ palette }) {
   )
 }
 
-function PageFooter({ compact = false }) {
+function PageFooter({ compact = false, logoSrc }) {
   return (
     <View style={styles.footer} fixed>
       <Image
-        src="/Mutomorro%20logo%20-%20black.png"
+        src={logoSrc}
         style={compact ? styles.footerLogoCompact : styles.footerLogo}
       />
       <Text style={styles.footerText}>competence-conduct.org</Text>
@@ -158,7 +173,7 @@ function DimensionCard({ dimension, responses }) {
   )
 }
 
-function ResultsPage({ responses, completedAt }) {
+function ResultsPage({ responses, completedAt, logoSrc }) {
   const counts = {
     embedded: countByStatus(responses, 'embedded'),
     working: countByStatus(responses, 'working'),
@@ -208,12 +223,12 @@ function ResultsPage({ responses, completedAt }) {
         </View>
       </View>
 
-      <PageFooter compact />
+      <PageFooter compact logoSrc={logoSrc} />
     </Page>
   )
 }
 
-function MutomorroPage() {
+function MutomorroPage({ logoSrc }) {
   // Heavier circle composition on right side, evoking the workshop cover
   const palette = [
     { x: PAGE_W - 220, y: 20, size: 220, color: colors.purplePrimary, opacity: 0.10 },
@@ -266,20 +281,29 @@ function MutomorroPage() {
         </View>
       </View>
 
-      <PageFooter />
+      <PageFooter logoSrc={logoSrc} />
     </Page>
   )
 }
 
-export default function DiagnosticPDF({ responses, completedAt }) {
+export default function DiagnosticPDF({
+  responses,
+  completedAt,
+  assets = DEFAULT_ASSETS,
+}) {
+  registerFonts(assets)
   return (
     <Document
       title="Culture Readiness Profile"
       author="Mutomorro"
       subject="Competence and Conduct Standard diagnostic results"
     >
-      <ResultsPage responses={responses} completedAt={completedAt} />
-      <MutomorroPage />
+      <ResultsPage
+        responses={responses}
+        completedAt={completedAt}
+        logoSrc={assets.logoSrc}
+      />
+      <MutomorroPage logoSrc={assets.logoSrc} />
     </Document>
   )
 }

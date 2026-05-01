@@ -38,9 +38,8 @@ export default function WelcomeScreen({ onStart }) {
           </div>
 
           <p className="mt-10 font-body text-[14px] text-ink-faint leading-relaxed">
-            Your responses stay in your browser. Nothing is stored on our
-            servers. Download or email your results at the end if you want
-            to keep them.
+            Your responses are anonymous. No personal information is
+            collected unless you choose to share it with us.
           </p>
         </div>
 

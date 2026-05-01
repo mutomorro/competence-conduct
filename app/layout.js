@@ -2,6 +2,7 @@ import { Inter_Tight, Outfit } from 'next/font/google'
 import './globals.css'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
+import Analytics from '../components/Analytics.jsx'
 
 const interTight = Inter_Tight({
   subsets: ['latin'],
@@ -42,6 +43,7 @@ export default function RootLayout({ children }) {
       className={`${interTight.variable} ${outfit.variable}`}
     >
       <body className="min-h-screen flex flex-col">
+        <Analytics />
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />
