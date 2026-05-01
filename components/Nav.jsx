@@ -16,6 +16,8 @@ const toolLinks = [
 
 const diagnosticLink = { href: '/diagnostic', label: 'Diagnostic' }
 
+const advisoryLink = { href: '/advisory', label: 'Advisory' }
+
 export default function Nav() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
@@ -109,6 +111,24 @@ export default function Nav() {
                 </DiagnosticButton>
               </div>
             </div>
+
+            {/* Vertical divider */}
+            <div aria-hidden className="w-px bg-warm-mid self-stretch" />
+
+            {/* Beyond group */}
+            <div className="flex flex-col" style={{ gap: '4px' }}>
+              <span className="font-body text-[10px] uppercase tracking-[0.08em] text-ink-faint">
+                Beyond
+              </span>
+              <div className="flex items-center gap-3">
+                <AdvisoryButton
+                  href={advisoryLink.href}
+                  active={isActive(advisoryLink.href)}
+                >
+                  {advisoryLink.label}
+                </AdvisoryButton>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -165,6 +185,22 @@ export default function Nav() {
                 </li>
               </ul>
             </div>
+            <div className="border-t border-warm-mid pt-5">
+              <p className="font-body text-[10px] uppercase tracking-[0.08em] text-ink-faint mb-2">
+                Beyond
+              </p>
+              <ul className="flex flex-wrap items-center gap-2">
+                <li>
+                  <AdvisoryButton
+                    href={advisoryLink.href}
+                    active={isActive(advisoryLink.href)}
+                    onClick={() => setOpen(false)}
+                  >
+                    {advisoryLink.label}
+                  </AdvisoryButton>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       ) : null}
@@ -207,6 +243,20 @@ function DiagnosticButton({ href, active, children, onClick }) {
   const stateClass = active
     ? 'bg-purple-overlap'
     : 'bg-purple-accent hover:bg-purple-overlap'
+  return (
+    <Link href={href} onClick={onClick} className={`${base} ${padding} ${stateClass}`}>
+      {children}
+    </Link>
+  )
+}
+
+function AdvisoryButton({ href, active, children, onClick }) {
+  const base =
+    'inline-flex items-center font-body text-[14px] font-semibold rounded-md transition-colors text-white'
+  const padding = 'px-[18px] py-[8px]'
+  const stateClass = active
+    ? 'bg-purple-overlap'
+    : 'bg-purple-primary hover:bg-purple-overlap'
   return (
     <Link href={href} onClick={onClick} className={`${base} ${padding} ${stateClass}`}>
       {children}

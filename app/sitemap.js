@@ -7,6 +7,7 @@ const ROUTES = [
   { path: '/diagnostic', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/challenges', priority: 0.7, changeFrequency: 'monthly' },
   { path: '/questions', priority: 0.7, changeFrequency: 'monthly' },
+  { path: '/advisory', priority: 0.6, changeFrequency: 'monthly' },
 ]
 
 export default function sitemap() {

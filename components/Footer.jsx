@@ -6,6 +6,7 @@ const sitePages = [
   { href: '/challenges', label: 'Challenges' },
   { href: '/questions', label: 'Key Questions' },
   { href: '/diagnostic', label: 'Diagnostic' },
+  { href: '/advisory', label: 'Advisory' },
 ]
 
 const officialSources = [
