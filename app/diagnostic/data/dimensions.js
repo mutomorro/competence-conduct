@@ -9,7 +9,7 @@ export const dimensions = [
       {
         id: '1a',
         label: 'Statement 1a',
-        text: 'Front-line staff can describe expected behaviours in their own words, without referring to a document',
+        text: 'Resident-facing staff can describe expected behaviours in their own words, without referring to a document',
       },
       {
         id: '1b',
