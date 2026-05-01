@@ -354,8 +354,8 @@ export default function StandardPage() {
             title="The two halves of the standard"
           />
           <PullQuote decorated>
-            The qualification requirements get most of the attention. The
-            culture requirements will do most of the work.
+            The qualification requirements are more visible. The culture
+            requirements may prove more demanding.
           </PullQuote>
           <div className="space-y-4 max-w-[42rem]">
             <p>
