@@ -94,7 +94,7 @@ export default function Home() {
             Beyond Qualifications
           </p>
           <h1 className="font-display font-normal text-[2.75rem] md:text-[4rem] lg:text-[5rem] leading-[1.05] tracking-tight text-ink max-w-[52rem]">
-            The Competence and Conduct Standard
+            Competence and Conduct Standard Toolkit
           </h1>
           <p className="mt-5 font-display font-normal text-[1.5rem] md:text-[1.75rem] leading-[1.25] text-ink-muted max-w-[56rem]">
             A culture change guide for housing leaders
