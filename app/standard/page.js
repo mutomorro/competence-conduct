@@ -627,7 +627,9 @@ export default function StandardPage() {
       >
         <div className="max-w-[84rem] mx-auto px-6 h-full relative">
           <aside className="absolute top-0 right-6 w-[17rem] h-full pointer-events-auto">
-            <TableOfContents items={chapters} />
+            <div className="sticky top-24">
+              <TableOfContents items={chapters} />
+            </div>
           </aside>
         </div>
       </div>

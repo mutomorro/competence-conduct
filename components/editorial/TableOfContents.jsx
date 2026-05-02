@@ -52,10 +52,7 @@ export default function TableOfContents({ items, label = 'On this page' }) {
   }, [items])
 
   return (
-    <nav
-      aria-label={label}
-      className="hidden lg:block sticky top-24 self-start"
-    >
+    <nav aria-label={label} className="hidden lg:block">
       <p className="text-xs uppercase tracking-[0.05em] font-medium text-ink-muted mb-2">
         {label}
       </p>
