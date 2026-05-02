@@ -38,7 +38,7 @@ const cards = [
       'Before you can close gaps, you need to know where they are. Our organisational health assessment gives you a structured, honest picture of culture, leadership, and capability across your organisation - not just the areas causing visible concern.',
     links: [
       {
-        href: 'https://mutomorro.com/states-of-vitality/',
+        href: 'https://mutomorro.com/states-of-vitality',
         label: 'Learn about the assessment',
       },
     ],
@@ -49,7 +49,7 @@ const cards = [
       'The standard expects culture that shapes decisions and outcomes - not values on a wall. We work alongside housing associations to understand culture as it is, co-design behaviours and standards with staff and stakeholders, and build the measurement frameworks that demonstrate progress to the regulator.',
     links: [
       {
-        href: 'https://mutomorro.com/services/culture-change-consultancy/',
+        href: 'https://mutomorro.com/services/culture-change-consultancy',
         label: 'Culture change consultancy',
       },
     ],
@@ -60,11 +60,11 @@ const cards = [
       'Leaders set the tone for everything the standard asks of an organisation. We design leadership programmes around the specific challenges your leadership team is facing, and provide executive coaching for senior leaders navigating regulatory change, restructuring, or cultural shifts.',
     links: [
       {
-        href: 'https://mutomorro.com/develop/deeper-ground/',
+        href: 'https://mutomorro.com/develop/deeper-ground',
         label: 'Leadership development',
       },
       {
-        href: 'https://mutomorro.com/develop/executive-coaching/',
+        href: 'https://mutomorro.com/develop/executive-coaching',
         label: 'Executive coaching',
       },
     ],
@@ -75,7 +75,7 @@ const cards = [
       "Meeting the standard isn't a single project - it's a programme of overlapping changes to how your organisation works. We help housing associations plan and deliver change in a way that builds capacity rather than burning people out.",
     links: [
       {
-        href: 'https://mutomorro.com/services/change-management-consultancy/',
+        href: 'https://mutomorro.com/services/change-management-consultancy',
         label: 'Change management consultancy',
       },
     ],
@@ -86,15 +86,15 @@ const cards = [
       'Standards live or die in the day-to-day. We design and deliver training for managers and frontline teams, build internal champion networks, and create the practical tools and routines that make expected behaviours part of how work gets done - not an extra layer on top of it.',
     links: [
       {
-        href: 'https://mutomorro.com/develop/bespoke-training/',
+        href: 'https://mutomorro.com/develop/bespoke-training',
         label: 'Bespoke training',
       },
       {
-        href: 'https://mutomorro.com/develop/manager-coaching/',
+        href: 'https://mutomorro.com/develop/manager-coaching',
         label: 'Manager coaching',
       },
       {
-        href: 'https://mutomorro.com/develop/team-sessions/',
+        href: 'https://mutomorro.com/develop/team-sessions',
         label: 'Team sessions',
       },
     ],
@@ -105,7 +105,7 @@ const cards = [
       "The regulator isn't looking for a one-off exercise. We help organisations build the internal capability to sustain culture work independently - facilitator guides, manager toolkits, and development resources your teams can use long after the consultancy ends.",
     links: [
       {
-        href: 'https://mutomorro.com/services/organisational-capacity-building/',
+        href: 'https://mutomorro.com/services/organisational-capacity-building',
         label: 'Capacity building',
       },
     ],
@@ -116,11 +116,11 @@ const cards = [
       'The Competence and Conduct Standard connects directly to how residents experience your services. We help housing associations design customer standards, improve complaint handling, and develop the frontline culture that turns policy into practice.',
     links: [
       {
-        href: 'https://mutomorro.com/services/customer-experience-consultancy/',
+        href: 'https://mutomorro.com/services/customer-experience-consultancy',
         label: 'Customer experience consultancy',
       },
       {
-        href: 'https://mutomorro.com/services/service-design-consultancy/',
+        href: 'https://mutomorro.com/services/service-design-consultancy',
         label: 'Service design consultancy',
       },
     ],
@@ -160,7 +160,7 @@ export default function AdvisoryPage() {
             </div>
 
             <p className="mt-8">
-              <ExtLink href="https://mutomorro.com/sectors/housing/">
+              <ExtLink href="https://mutomorro.com/sectors/housing">
                 See our housing experience →
               </ExtLink>
             </p>
@@ -217,7 +217,7 @@ export default function AdvisoryPage() {
             </p>
             <p className="mt-8">
               <a
-                href="https://mutomorro.com/contact/"
+                href="https://mutomorro.com/contact"
                 target="_blank"
                 rel="noopener"
                 className="inline-flex items-center font-body text-[14px] font-semibold rounded-md transition-colors text-white bg-purple-primary hover:bg-purple-overlap px-[18px] py-[10px]"
