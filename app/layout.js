@@ -3,6 +3,7 @@ import './globals.css'
 import Nav from '../components/Nav.jsx'
 import Footer from '../components/Footer.jsx'
 import Analytics from '../components/Analytics.jsx'
+import { Analytics as VercelAnalytics } from '@vercel/analytics/next'
 
 const interTight = Inter_Tight({
   subsets: ['latin'],
@@ -44,6 +45,7 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-screen flex flex-col">
         <Analytics />
+        <VercelAnalytics />
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />
