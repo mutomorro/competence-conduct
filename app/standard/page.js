@@ -288,7 +288,7 @@ const closingCards = [
   },
 ]
 
-const bandInner = 'max-w-[84rem] mx-auto px-6 lg:pr-[18rem] py-16 md:py-20'
+const bandInner = 'max-w-[84rem] mx-auto px-6 lg:pr-[19rem] py-16 md:py-20'
 
 export default function StandardPage() {
   return (
@@ -626,7 +626,7 @@ export default function StandardPage() {
         aria-hidden="false"
       >
         <div className="max-w-[84rem] mx-auto px-6 h-full relative">
-          <aside className="absolute top-0 right-6 w-[15rem] h-full pointer-events-auto">
+          <aside className="absolute top-0 right-6 w-[17rem] h-full pointer-events-auto">
             <TableOfContents items={chapters} />
           </aside>
         </div>

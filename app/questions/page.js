@@ -221,7 +221,7 @@ const questions = [
 
 const tocItems = questions.map((q) => ({ id: q.id, title: q.short }))
 
-const bandInner = 'max-w-[84rem] mx-auto px-6 lg:pr-[18rem] py-16 md:py-20'
+const bandInner = 'max-w-[84rem] mx-auto px-6 lg:pr-[19rem] py-16 md:py-20'
 
 function QuestionBand({ question, index, bg }) {
   return (
@@ -354,8 +354,8 @@ export default function QuestionsPage() {
       {/* Sticky TOC overlay (lg+ only) */}
       <div className="hidden lg:block absolute inset-0 pointer-events-none">
         <div className="max-w-[84rem] mx-auto px-6 h-full relative">
-          <aside className="absolute top-0 right-6 w-[15rem] h-full pointer-events-auto">
-            <div className="sticky top-24 space-y-7">
+          <aside className="absolute top-0 right-6 w-[17rem] h-full pointer-events-auto">
+            <div className="sticky top-24 space-y-5">
               <TableOfContents items={tocItems} />
               <DownloadCard {...downloadCardProps} />
             </div>

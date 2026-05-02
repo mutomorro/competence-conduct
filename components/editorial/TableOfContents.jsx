@@ -56,10 +56,10 @@ export default function TableOfContents({ items, label = 'On this page' }) {
       aria-label={label}
       className="hidden lg:block sticky top-24 self-start"
     >
-      <p className="text-xs uppercase tracking-[0.05em] font-medium text-ink-muted mb-3">
+      <p className="text-xs uppercase tracking-[0.05em] font-medium text-ink-muted mb-2">
         {label}
       </p>
-      <ol className="space-y-0.5 text-sm">
+      <ol className="text-sm">
         {items.map((item, i) => {
           const active = activeId === item.id
           return (
@@ -68,8 +68,8 @@ export default function TableOfContents({ items, label = 'On this page' }) {
                 href={`#${item.id}`}
                 className={
                   active
-                    ? 'flex items-baseline gap-3 py-2 pl-4 -ml-[2px] border-l-2 border-purple-accent text-purple-accent font-medium transition-colors'
-                    : 'flex items-baseline gap-3 py-2 pl-4 -ml-[2px] border-l-2 border-warm-mid text-ink-muted hover:text-ink hover:border-ink-muted transition-colors'
+                    ? 'flex items-baseline gap-3 py-1.5 pl-4 -ml-[2px] border-l-2 border-purple-accent text-purple-accent font-medium transition-colors'
+                    : 'flex items-baseline gap-3 py-1.5 pl-4 -ml-[2px] border-l-2 border-warm-mid text-ink-muted hover:text-ink hover:border-ink-muted transition-colors'
                 }
               >
                 <span className="text-ink-faint tabular-nums shrink-0">
