@@ -11,6 +11,9 @@ export const metadata = {
     'The Competence and Conduct Standard: culture and behaviour requirements',
   description:
     'What the Competence and Conduct Standard requires beyond qualifications - culture change, embedded behaviours, codes of conduct, and resident voice. A practical breakdown for housing leaders preparing for October 2026.',
+  alternates: {
+    canonical: 'https://competence-conduct.org/standard',
+  },
   openGraph: {
     title:
       'The Competence and Conduct Standard: culture and behaviour requirements',
@@ -21,6 +24,22 @@ export const metadata = {
     locale: 'en_GB',
     type: 'website',
     images: ['/og-image-1200x630.png'],
+  },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline:
+    'The Competence and Conduct Standard: culture and behaviour requirements',
+  description:
+    'What the Competence and Conduct Standard requires beyond qualifications - culture change, embedded behaviours, codes of conduct, and resident voice. A practical breakdown for housing leaders preparing for October 2026.',
+  url: 'https://competence-conduct.org/standard',
+  dateModified: '2026-04-30',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Mutomorro',
+    url: 'https://mutomorro.com',
   },
 }
 
@@ -293,6 +312,10 @@ const bandInner = 'max-w-[84rem] mx-auto px-6 lg:pr-[19rem] py-16 md:py-20'
 export default function StandardPage() {
   return (
     <article className="relative" id="top">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Band 1 — Page header */}
       <section className="w-full bg-warm-light">
         <div className={bandInner}>

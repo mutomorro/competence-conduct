@@ -6,6 +6,9 @@ export const metadata = {
     'Advisory - Hands-on support for the Competence and Conduct Standard',
   description:
     'Ways Mutomorro works with housing organisations on the culture, leadership, and behaviour side of the Competence and Conduct Standard - from organisational health assessment through to embedding change.',
+  alternates: {
+    canonical: 'https://competence-conduct.org/advisory',
+  },
   openGraph: {
     title: 'Advisory - Competence and Conduct',
     description:
@@ -15,6 +18,20 @@ export const metadata = {
     locale: 'en_GB',
     type: 'website',
     images: ['/og-image-1200x630.png'],
+  },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Advisory - Hands-on support for the Competence and Conduct Standard',
+  description:
+    'Ways Mutomorro works with housing organisations on the culture, leadership, and behaviour side of the Competence and Conduct Standard - from organisational health assessment through to embedding change.',
+  url: 'https://competence-conduct.org/advisory',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Mutomorro',
+    url: 'https://mutomorro.com',
   },
 }
 
@@ -132,6 +149,10 @@ const bandInner = 'max-w-[84rem] mx-auto px-6 py-16 md:py-20'
 export default function AdvisoryPage() {
   return (
     <article id="top">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Band 1 — Page intro */}
       <section className="w-full bg-warm-light">
         <div className={bandInner}>

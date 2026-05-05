@@ -8,6 +8,9 @@ export const metadata = {
     'Beyond Qualifications | Culture change and the Competence and Conduct Standard',
   description:
     'Practical guidance on the culture and conduct requirements of the Competence and Conduct Standard. A breakdown of the requirements, reflective questions, a diagnostic tool, and an honest look at the challenges housing providers are navigating.',
+  alternates: {
+    canonical: 'https://competence-conduct.org',
+  },
   openGraph: {
     title: 'Beyond Qualifications | Competence and Conduct Standard',
     description:
@@ -17,6 +20,20 @@ export const metadata = {
     locale: 'en_GB',
     type: 'website',
     images: ['/og-image-1200x630.png'],
+  },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Competence & Conduct Toolkit',
+  url: 'https://competence-conduct.org',
+  description:
+    'Practical guidance on the culture and conduct requirements of the Competence and Conduct Standard. A breakdown of the requirements, reflective questions, a diagnostic tool, and an honest look at the challenges housing providers are navigating.',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Mutomorro',
+    url: 'https://mutomorro.com',
   },
 }
 
@@ -66,6 +83,10 @@ const diagnosticCard = {
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Section 1 — Hero */}
       <section className="relative overflow-hidden">
         {/* Atmospheric VennField — lg+, bleeds off right edge, masked away from text */}

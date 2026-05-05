@@ -15,6 +15,9 @@ export const metadata = {
   title: 'Six culture challenges in the Competence and Conduct Standard',
   description:
     'Six challenges housing providers face in meeting the culture and behaviour requirements of the Competence and Conduct Standard. Practical guidance for leadership teams preparing for October 2026.',
+  alternates: {
+    canonical: 'https://competence-conduct.org/challenges',
+  },
   openGraph: {
     title: 'Six culture challenges in the Competence and Conduct Standard',
     description:
@@ -24,6 +27,21 @@ export const metadata = {
     locale: 'en_GB',
     type: 'website',
     images: ['/og-image-1200x630.png'],
+  },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Six culture challenges in the Competence and Conduct Standard',
+  description:
+    'Six challenges housing providers face in meeting the culture and behaviour requirements of the Competence and Conduct Standard. Practical guidance for leadership teams preparing for October 2026.',
+  url: 'https://competence-conduct.org/challenges',
+  dateModified: '2026-04-30',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Mutomorro',
+    url: 'https://mutomorro.com',
   },
 }
 
@@ -429,6 +447,10 @@ function ChallengeBand({ challenge, index, bg }) {
 export default function ChallengesPage() {
   return (
     <article className="relative" id="top">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Band 1 — Page header */}
       <section className="w-full bg-warm-light">
         <div className={bandInner}>

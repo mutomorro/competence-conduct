@@ -15,6 +15,9 @@ export const metadata = {
   title: 'Five culture questions for housing leadership teams',
   description:
     'Five reflective questions for housing leadership teams preparing for the culture and behaviour requirements of the Competence and Conduct Standard. Designed to surface the gap between policy and practice before October 2026.',
+  alternates: {
+    canonical: 'https://competence-conduct.org/questions',
+  },
   openGraph: {
     title: 'Five culture questions for housing leadership teams',
     description:
@@ -24,6 +27,20 @@ export const metadata = {
     locale: 'en_GB',
     type: 'website',
     images: ['/og-image-1200x630.png'],
+  },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Five culture questions for housing leadership teams',
+  description:
+    'Five reflective questions for housing leadership teams preparing for the culture and behaviour requirements of the Competence and Conduct Standard. Designed to surface the gap between policy and practice before October 2026.',
+  url: 'https://competence-conduct.org/questions',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Mutomorro',
+    url: 'https://mutomorro.com',
   },
 }
 
@@ -248,6 +265,10 @@ function QuestionBand({ question, index, bg }) {
 export default function QuestionsPage() {
   return (
     <article className="relative" id="top">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Band 1 — Page header */}
       <section className="w-full bg-warm-light">
         <div className={bandInner}>
