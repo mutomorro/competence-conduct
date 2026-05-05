@@ -120,6 +120,35 @@ body {
   animation: diagnostic-fade-in 280ms ease-out;
 }
 
+/* -------------------------------------------------------------
+   Primary CTA on the dark results header — gentle attention pulse
+   on page load. Runs three times then stops; respects
+   prefers-reduced-motion.
+   ------------------------------------------------------------- */
+@keyframes diagnostic-cta-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(255, 255, 255, 0.55),
+      0 4px 14px -2px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    box-shadow:
+      0 0 0 10px rgba(255, 255, 255, 0),
+      0 4px 14px -2px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.diagnostic-primary-cta {
+  animation: diagnostic-cta-pulse 1800ms ease-out 3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diagnostic-primary-cta {
+    animation: none;
+  }
+}
+
 @media print {
   nav,
   footer,

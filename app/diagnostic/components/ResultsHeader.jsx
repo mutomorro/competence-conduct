@@ -31,78 +31,81 @@ export default function ResultsHeader({
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row sm:items-center gap-3 md:shrink-0">
-          {isSent ? (
-            <p
-              className="font-body text-[13px] text-white self-center"
-              style={{ fontFamily: 'var(--font-outfit), sans-serif' }}
-            >
-              <span style={{ color: '#4CAF50' }}>✓</span>{' '}
-              Sent to {sentTo}. We won&apos;t email you again unless you ask
-              us to.
-            </p>
-          ) : (
-            <>
-              <PDFDownloadButton
-                responses={responses}
-                className="font-body text-[14px] font-medium text-white border border-white/40 rounded-full px-5 py-2.5 hover:bg-white hover:text-ink hover:border-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 disabled:opacity-70 disabled:cursor-not-allowed"
-              />
+        <div className="flex flex-col items-stretch md:items-end gap-2 md:shrink-0">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+            <PDFDownloadButton
+              responses={responses}
+              className="diagnostic-primary-cta font-body text-[14px] font-semibold text-ink bg-white rounded-full px-6 py-2.5 hover:bg-white/95 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 disabled:opacity-70 disabled:cursor-not-allowed"
+            />
 
-              {emailOpen ? (
-                <form
-                  onSubmit={onEmailSubmit}
-                  className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2"
-                  noValidate
+            {isSent ? (
+              <span
+                className="font-body text-[13px] text-white/85 self-center inline-flex items-center gap-1.5 animate-fade-in"
+                role="status"
+                aria-live="polite"
+              >
+                <span style={{ color: '#4CAF50' }} aria-hidden="true">✓</span>
+                <span>Sent to {sentTo}</span>
+              </span>
+            ) : emailOpen ? (
+              <form
+                onSubmit={onEmailSubmit}
+                className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2"
+                noValidate
+              >
+                <div className="flex flex-col">
+                  <input
+                    type="email"
+                    required
+                    autoFocus
+                    value={emailValue}
+                    onChange={(e) => onEmailChange(e.target.value)}
+                    placeholder="Your email address"
+                    disabled={isSending}
+                    className="font-body text-[14px] bg-white text-ink placeholder-ink-faint border border-white/40 rounded-full px-4 py-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 disabled:opacity-70"
+                  />
+                  {emailError ? (
+                    <p
+                      role="alert"
+                      className="mt-1 font-body text-[12px] text-[#FFB4B4]"
+                    >
+                      {emailError}
+                    </p>
+                  ) : null}
+                </div>
+                <button
+                  type="submit"
+                  disabled={isSending}
+                  className="font-body text-[14px] font-medium text-white rounded-full px-5 py-2.5 hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 disabled:opacity-70 disabled:cursor-not-allowed"
+                  style={{ backgroundColor: '#9B51E1' }}
                 >
-                  <div className="flex flex-col">
-                    <input
-                      type="email"
-                      required
-                      autoFocus
-                      value={emailValue}
-                      onChange={(e) => onEmailChange(e.target.value)}
-                      placeholder="Your email address"
-                      disabled={isSending}
-                      className="font-body text-[14px] bg-white text-ink placeholder-ink-faint border border-white rounded-full px-4 py-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 disabled:opacity-70"
-                    />
-                    {emailError ? (
-                      <p
-                        role="alert"
-                        className="mt-1 font-body text-[12px] text-[#FFB4B4]"
-                      >
-                        {emailError}
-                      </p>
-                    ) : null}
-                  </div>
-                  <button
-                    type="submit"
-                    disabled={isSending}
-                    className="font-body text-[14px] font-medium text-white bg-purple-primary rounded-full px-5 py-2.5 hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 disabled:opacity-70 disabled:cursor-not-allowed"
-                    style={{ backgroundColor: '#9B51E1' }}
-                  >
-                    {isSending ? 'Sending…' : 'Send'}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={onEmailCancel}
-                    disabled={isSending}
-                    aria-label="Cancel"
-                    className="font-body text-[13px] text-white/70 hover:text-white transition-colors px-2 py-1 self-center disabled:opacity-50"
-                  >
-                    ✕
-                  </button>
-                </form>
-              ) : (
+                  {isSending ? 'Sending…' : 'Send'}
+                </button>
                 <button
                   type="button"
-                  onClick={onEmailOpen}
-                  className="font-body text-[14px] font-medium text-ink bg-white rounded-full px-5 py-2.5 hover:bg-white/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+                  onClick={onEmailCancel}
+                  disabled={isSending}
+                  aria-label="Cancel"
+                  className="font-body text-[13px] text-white/70 hover:text-white transition-colors px-2 py-1 self-center disabled:opacity-50"
                 >
-                  Send to my inbox
+                  ✕
                 </button>
-              )}
-            </>
-          )}
+              </form>
+            ) : (
+              <button
+                type="button"
+                onClick={onEmailOpen}
+                className="font-body text-[14px] font-medium text-white border border-white/40 rounded-full px-5 py-2.5 hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+              >
+                Send to my inbox
+              </button>
+            )}
+          </div>
+          {isSent ? (
+            <p className="font-body text-[12px] text-white/60 self-end max-w-[28rem] text-right">
+              We won&apos;t email you again unless you ask us to.
+            </p>
+          ) : null}
         </div>
       </div>
     </div>
