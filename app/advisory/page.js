@@ -103,7 +103,7 @@ const cards = [
       'Standards live or die in the day-to-day. We design and deliver training for managers and frontline teams, build internal champion networks, and create the practical tools and routines that make expected behaviours part of how work gets done - not an extra layer on top of it.',
     links: [
       {
-        href: 'https://mutomorro.com/develop/bespoke-training',
+        href: 'https://mutomorro.com/training',
         label: 'Bespoke training',
       },
       {
